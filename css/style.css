@@ -12,15 +12,15 @@
 
 :root {
   --font-tittle-1: 'Benguiat Bold';
-  --text-font: 'Courier', sans-serif;
+  --text-font: 'Work Sans', sans-serif;
   --webkit-color-1: #080808;
-  --webkit-color-2: #ac070f;
+  --webkit-color-2: #76040a;
   --webkit-color-3: #FFFFFF;
   --webkit-color-transparency-1: rgb(8, 8, 8, 0.3);
-  --webkit-color-transparency-2: rgba(172, 7, 15, 0.3);
+  --webkit-color-transparency-2: rgba(220, 16, 26, 0.34);
 }
 
-
+/* MENU DE NAVEGACION */
 
 #menu {
   position: fixed;
@@ -127,6 +127,8 @@
   text-decoration: overline;
 } */
 
+/* PANTALLA DE CARGA */
+
 #pantalla-carga {
     width: 100%;
     height: 100vh;
@@ -165,9 +167,7 @@
   overflow: hidden;
 }
 
-.main, .sub {
-    font-family: 'Benguiat Bold';
-}
+/* CABECERA */
 
 #cabecera {
     background-image: linear-gradient(var(--webkit-color-transparency-1)), url(../media/img/inicio/fondo_og.png);
@@ -180,6 +180,8 @@
     overflow: hidden;
 }
 
+/* SECCIONES HOME PAGE */
+
 .info {
     background-color: var(--webkit-color-1);
     width: auto;
@@ -189,18 +191,19 @@
     align-items: center;
     flex-direction: column;
     padding: 4em;
-    gap: 10em;
+    gap: 8em;
 }
 
 .uno, .dos {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 4em;
+    gap: 4.5em;
 }
 
 .uno {
     flex-direction: row;
+    margin-top: 6em;
 }
 
 .dos {
@@ -211,7 +214,7 @@
     width: 78vw;
 }
 
-.dos h2 {
+.dos h1 {
     display: flex;
     justify-content: center;
 }
@@ -225,7 +228,7 @@ figure {
 }
 
 .dos img {
-    width: 20vw;
+    width: 22vw;
     height: auto;
     border-radius: 2em;
 }
@@ -236,23 +239,24 @@ h1, h2 {
 }
 
 h1 {
-    font-size: 2.5em;
+    font-size: 2.45em;
+    margin-bottom: 0.1em;
 }
 
 h2 {
-    font-size: 2.3em;
-    margin-bottom: 1.4em;
+    font-size: 1.7em;
+    margin-bottom: 1.2em;
 }
 
 p {
-    font-size: 1.3em;
+    font-size: 1.2em;
     color: var(--webkit-color-3);
     font-family: var(--text-font);
     line-height: 1.35em;
 }
 
 .uno img {
-    width: 32.5vw;
+    width: 30vw;
     height: auto;
     border-radius: 2em;
 }
@@ -260,6 +264,36 @@ p {
 .textos {
     width: 40vw;
 }
+.animacion {
+    color: transparent;
+    background: linear-gradient(
+        90deg,
+        #720202,
+        #893903,
+        #720202
+    );
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    animation: moverColores 3s linear infinite;
+}
+
+@keyframes moverColores {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
+#contexto > p {
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
+#temas > p {
+  margin-bottom: 1.3em;
+}
+
+
 
 /* .main, .sub {
     font-family: 'Benguiat Bold';
