@@ -16,6 +16,7 @@
   --webkit-color-1: #080808;
   --webkit-color-2: #76040a;
   --webkit-color-3: #FFFFFF;
+  --webkit-color-4: #b6121a;
   --webkit-color-transparency-1: rgb(8, 8, 8, 0.3);
   --webkit-color-transparency-2: rgba(220, 16, 26, 0.34);
 }
@@ -119,14 +120,6 @@
   width: 100%;
 }
 
-/* #nav-menu a:hover {
-  text-decoration: overline;
-} */
-
-/* #current_page{
-  text-decoration: overline;
-} */
-
 /* PANTALLA DE CARGA */
 
 #pantalla-carga {
@@ -167,39 +160,6 @@
   overflow: hidden;
 }
 
-/* MARQUESINA DE TEXTO */
-
-.marquesina {
-  width: 100vw;
-  overflow: hidden;
-  background: var(--webkit-color-1);
-  padding: 2em 0;
-  overflow: hidden;
-}
-
-.t-marquesina {
-  display: inline-block;
-  white-space: nowrap;
-  animation: mover 24s linear infinite;
-}
-
-.t-marquesina > P {
-  font-family: 'Benguiat Bold';
-  font-size: 1.15em;
-}
-
-.m-s {
-  color: var(--webkit-color-2);
-}
-
-@keyframes mover {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
 
 /* CABECERA */
 
@@ -224,7 +184,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 4em;
+    padding: 2em;
     gap: 8em;
 }
 
@@ -242,6 +202,7 @@
 
 .dos {
     flex-direction: column;
+    margin-top: 6em;
 }
 
 .dos div {
@@ -251,6 +212,12 @@
 .dos h1 {
     display: flex;
     justify-content: center;
+}
+
+.dos h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 figure {
@@ -323,34 +290,85 @@ p {
   margin-bottom: 1.5em;
 }
 
+.cont-fotos {
+  transition: transform 0.3s ease;
+}
+
+.cont-fotos:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 40px var(--webkit-color-4);
+}
+
 #temas > p {
   margin-bottom: 1.3em;
 }
+
+/* MARQUESINA DE TEXTO */
+
+.marquesina {
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  background: var(--webkit-color-1);
+  padding: 2em 0;
+  overflow: hidden;
+}
+
+.t-marquesina {
+  display: inline-block;
+  white-space: nowrap;
+  animation: mover 24s linear infinite;
+  margin-top: 4em;
+  margin-bottom: 2em;
+}
+
+.t-marquesina > P {
+  font-family: 'Benguiat Bold';
+  font-size: 1.15em;
+}
+
+.m-s {
+  color: var(--webkit-color-4);
+}
+
+@keyframes mover {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.fondo-ud {
+    background-image: url(../media/img/inicio/fondo-updwn.jpeg);
+    display: block;
+    background-size: cover;
+    background-position: center;
+    /* background-attachment: fixed; */
+    width: 100%;
+    height: 101vh;
+    overflow: hidden;
+}
+
+.ud-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 23%;
+}
+
+.ud-cont h1, h2 {
+  color: white;
+}
+
+
+
+
 
 body {
   overflow-x: hidden;
 }
 
-
-
-/* .main, .sub {
-    font-family: 'Benguiat Bold';
-}
-
-.main {
-    font-weight: 800;
-    color: rgb(122, 5, 5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 5em;
-    padding-top: 15.5%;
-}
-
-.sub {
-    color: rgb(83, 16, 16);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3em;
-} */
