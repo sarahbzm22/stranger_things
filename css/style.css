@@ -10,10 +10,138 @@
     font-style: normal;
 }
 
-header {
+:root {
+  --font-tittle-1: 'Benguiat Bold';
+  --text-font: 'Courier', sans-serif;
+  --webkit-color-1: #080808;
+  --webkit-color-2: #ac070f;
+  --webkit-color-3: #FFFFFF;
+  --webkit-color-transparency-1: rgb(8, 8, 8, 0.3);
+  --webkit-color-transparency-2: rgba(172, 7, 15, 0.3);
+}
+
+
+
+#menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: calc(100vw - 7em);
+  height: 3em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3em; 
+  /* background: transparent;  */
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease;
+}
+
+#menu.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#logo-menu{
+  padding-left: 3em;
+  padding-right: 3em;
+  border-radius: 5em;
+  overflow: hidden;
+  background-color: var(--webkit-color-transparency-2);
+  backdrop-filter: blur(12px);
+  height: 3em;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
+
+#logo-menu img {
+  height: 50%;
+  width: auto;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+#nav-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-left: 3em;
+  padding-right: 3em;
+  border-radius: 5em;
+  height: 3em;
+  background-color: var(--webkit-color-transparency-2);
+  backdrop-filter: blur(12px);  
+}
+
+#nav-menu i,
+#nav-menu > div:first-child > ul > li:last-child {
+  display: none;
+}
+
+#nav-menu ul {
+  display: flex;
+  gap: 3em;
+}
+
+#nav-menu li {
+  list-style: none;
+}
+
+#nav-menu a {
+  color: var(--webkit-color-3);
+  font-size: 1em;
+  font-family: var(--text-font);
+  font-weight: 500;
+  position: relative;
+  text-decoration: none;
+  line-height: 1.2;
+}
+
+#nav-menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 100%;              
+  margin-bottom: 2px;       
+  width: 0%;
+  height: 1.5px;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+#nav-menu a:hover::after,
+#nav-menu a#current-page::after {
+  width: 100%;
+}
+
+/* #nav-menu a:hover {
+  text-decoration: overline;
+} */
+
+/* #current_page{
+  text-decoration: overline;
+} */
+
+#pantalla-carga {
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: black;
+    transition: opacity 1s ease;
+}
+
+#pantalla-carga.ocultar {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .carga {
@@ -32,19 +160,105 @@ header {
     transform: translate(-50%, -50%);
 }
 
+.no-scroll {
+  height: 100vh;
+  overflow: hidden;
+}
+
 .main, .sub {
     font-family: 'Benguiat Bold';
 }
 
-.fondo {
-    background-image: url(../media/img/Stranger_Things_logo.png);
+#cabecera {
+    background-image: linear-gradient(var(--webkit-color-transparency-1)), url(../media/img/inicio/fondo_og.png);
     display: block;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     width: 100%;
     height: 100vh;
     overflow: hidden;
+}
+
+.info {
+    background-color: var(--webkit-color-1);
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 4em;
+    gap: 10em;
+}
+
+.uno, .dos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4em;
+}
+
+.uno {
+    flex-direction: row;
+}
+
+.dos {
+    flex-direction: column;
+}
+
+.dos div {
+    width: 78vw;
+}
+
+.dos h2 {
+    display: flex;
+    justify-content: center;
+}
+
+figure {
+    display: flex;
+}
+
+.dos figure {
+    gap: 3em;
+}
+
+.dos img {
+    width: 20vw;
+    height: auto;
+    border-radius: 2em;
+}
+
+h1, h2 {
+    font-family: var(--font-tittle-1);
+    color: var(--webkit-color-2);
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 2.3em;
+    margin-bottom: 1.4em;
+}
+
+p {
+    font-size: 1.3em;
+    color: var(--webkit-color-3);
+    font-family: var(--text-font);
+    line-height: 1.35em;
+}
+
+.uno img {
+    width: 32.5vw;
+    height: auto;
+    border-radius: 2em;
+}
+
+.textos {
+    width: 40vw;
 }
 
 /* .main, .sub {

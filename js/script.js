@@ -1,21 +1,28 @@
-// // paso de pantalla de carga y pantalla principal
-
 document.addEventListener("DOMContentLoaded", () => {
-    const loader = document.querySelector(".carga");
-    const video = loader.querySelector("video");
+  const pantallaCarga = document.getElementById("pantalla-carga");
+  const video = pantallaCarga.querySelector("video");
+  const menu = document.getElementById("menu");
 
-    // Seguridad por si algo falla
-    if (!video || !loader) return;
+  // Bloqueamos scroll al inicio
+  document.body.classList.add("no-scroll");
 
-    // Cuando el vídeo termine
-    video.addEventListener("ended", () => {
-        // Ocultamos la pantalla de carga
-        loader.classList.add("ocultar");
+  if (!video || !pantallaCarga) return;
 
-        // Opcional: eliminar del DOM tras la animación
-        setTimeout(() => {
-            loader.style.display = "none";
-        }, 1000); // debe coincidir con el CSS
-    });
+  video.addEventListener("ended", () => {
+    // Ocultamos pantalla de carga
+    pantallaCarga.classList.add("ocultar");
+
+    // Mostramos el menú
+    menu.style.opacity = "1";
+    menu.style.pointerEvents = "auto";
+
+    // Quitamos el bloqueo de scroll
+    document.body.classList.remove("no-scroll");
+
+    // Eliminamos el section tras la animación
+    setTimeout(() => {
+      pantallaCarga.style.display = "none";
+    }, 1000);
+  });
 });
 

@@ -17,19 +17,79 @@
 </head>
 
 <body>
-    <header>
-        <!-- pantalla de carga -->
+    <header id="menu">
+      <div id="logo-menu">
+        <img src="media/img/logos/logo_st_blanco.svg" alt="Logo Stranger Things">
+      </div>
+
+      <nav id="nav-menu">
+        <div>
+          <i class="fas fa-bars" onclick="openMenu()"></i>
+          <ul>
+            <li>
+              <a id="current_page" href="index.html" onclick="closeMenu()">INICIO</a>
+            </li>
+            <li>
+              <a class="link" href="" onclick="closeMenu()">TEMPORADAS</a>
+            </li>
+            <li>
+              <a class="link" href="" onclick="closeMenu()">PERSONAJES</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-xmark" onclick="closeMenu()"></i>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <section id="pantalla-carga">
         <div class="carga">
             <video class="video" autoplay muted playsinline>
-                <source src="media/video/stvideo.mp4" type="video/mp4">
+            <source src="media/video/video-carga.mp4" type="video/mp4">
             </video>
         </div>
+    </section>
 
-        <!-- cabecera -->
-         <div class="fondo">
+    <section>
+        <div id="cabecera"></div>
+    </section>
+
+    <section class="info">
+        <div class="uno">
+            <figure>
+                <img src="media/img/inicio/intro.jpg">
+            </figure>
+            <div class="textos">
+                <h2>CÓMO EMPEZÓ TODO</h2>
+                <p>En el pequeño pueblo de Hawkins, Indiana, la misteriosa desaparición de un niño desencadena una serie de sucesos sobrenaturales que cambiarán la vida de sus habitantes. A medida que sus amigos, familiares y autoridades intentan encontrarlo, descubren la existencia de fuerzas desconocidas y peligrosas provenientes de una dimensión paralela llamada “El Otro Lado” o “Upside Down”. Mientras el pueblo se enfrenta a criaturas aterradoras y a secretos ocultos de un laboratorio gubernamental, un grupo de jóvenes amigos se une para combatir lo inexplicable.</p>
+            </div>
         </div>
 
-    </header>
+        <div class="dos">
+            <div class="textos">
+                <h2>EL REFLEJO DE UNA ÉPOCA</h2>
+                <p>Stranger Things se desarrolla en la década de 1980, un período marcado por tensiones políticas y avances tecnológicos que definieron la vida cotidiana en Estados Unidos. La Guerra Fría estaba en pleno auge, generando desconfianza hacia el gobierno y un ambiente de secretos y conspiraciones. Los medios de comunicación, la música, el cine y la cultura popular de la época reflejaban un espíritu de aventura y curiosidad, mientras la tecnología comenzaba a cambiar la manera en que las personas interactúan y se informan.</p>
+                <p>Hawkins parece un típico pueblo estadounidense, pero bajo su apariencia tranquila se esconden experimentos científicos secretos y fenómenos inexplicables que reflejan las preocupaciones y temores de la época, convirtiendo a la década de los 80 en un escenario perfecto para la mezcla de misterio, ciencia y lo sobrenatural que caracteriza la serie.</p>
+            </div>
+            <figure>
+                <img src="media/img/inicio/contexto1.jpg">
+                <img src="media/img/inicio/contexto2.jpg">
+                <img src="media/img/inicio/contexto3.jpg">
+            </figure>
+        </div>
+
+        <div class="uno">
+            <div class="textos">
+                <h2>MÁS ALLÁ DE LA FICCIÓN</h2>
+                <p>La serie combina lo sobrenatural con lo humano, explorando la amistad y la lealtad de un grupo de jóvenes que enfrentan juntos peligros inimaginables, así como la fuerza de los lazos familiares frente a las amenazas externas. La serie refleja el miedo y la valentía al enfrentarse a lo desconocido, la curiosidad por descubrir secretos ocultos y las conspiraciones que rodean experimentos peligrosos del gobierno. A través de estos elementos, la historia aborda también la superación personal, el sacrificio y la importancia de mantenerse unidos ante la adversidad, creando una narrativa intensa, llena de misterio y emoción que conecta profundamente con el espectador.</p>
+            </div>
+            <figure>
+                <img src="media/img/inicio/temas.jpg">
+            </figure>
+        </div>
+    </section>
+
 </body>
 
 </html>
