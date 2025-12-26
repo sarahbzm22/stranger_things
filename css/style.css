@@ -167,6 +167,40 @@
   overflow: hidden;
 }
 
+/* MARQUESINA DE TEXTO */
+
+.marquesina {
+  width: 100vw;
+  overflow: hidden;
+  background: var(--webkit-color-1);
+  padding: 2em 0;
+  overflow: hidden;
+}
+
+.t-marquesina {
+  display: inline-block;
+  white-space: nowrap;
+  animation: mover 24s linear infinite;
+}
+
+.t-marquesina > P {
+  font-family: 'Benguiat Bold';
+  font-size: 1.15em;
+}
+
+.m-s {
+  color: var(--webkit-color-2);
+}
+
+@keyframes mover {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
 /* CABECERA */
 
 #cabecera {
@@ -291,6 +325,10 @@ p {
 
 #temas > p {
   margin-bottom: 1.3em;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 
