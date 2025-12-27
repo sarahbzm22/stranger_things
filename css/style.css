@@ -295,6 +295,7 @@ p {
 .textos {
     width: 40vw;
 }
+
 .animacion {
     color: transparent;
     background: linear-gradient(
@@ -387,16 +388,38 @@ p {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-top: 23%;
+  padding-top: 20%;
 }
 
-.ud-cont h1, h2 {
+.upside-down h1,
+.upside-down h2 {
   color: white;
+  line-height: 0.6em;
+  mix-blend-mode: difference;
+  animation: luz 2s ease-in-out infinite alternate;
 }
 
+@keyframes luz {
+  from {
+    text-shadow: 0 0 10px rgb(255, 196, 0);
+  }
+  to {
+    text-shadow: 0 0 30px rgb(255, 196, 0);
+  }
+}
 
+.upside-down h1 {
+  font-size: 4em;
+  text-decoration: underline;
+  
+}
 
-
+.down {
+  transform: rotate(180deg);
+  padding-top: 0.25em;
+  padding-bottom: 0.5em;
+  
+}
 
 body {
   overflow-x: hidden;
