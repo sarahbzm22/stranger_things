@@ -122,16 +122,46 @@
 
 /* PANTALLA DE CARGA */
 
-#pantalla-carga {
+#pre-pantalla-carga, #pantalla-carga {
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    z-index: 5;
     position: fixed;
     top: 0;
     left: 0;
-    background: black;
+    background: var(--webkit-color-1);
     transition: opacity 1s ease;
+}
+
+#pre-pantalla-carga {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  text-align: center;
+  z-index: 5;
+}
+
+#btn-play {
+  margin-top: 2em;
+  padding: 0.8em 2.5em;
+  font-family: var(--font-tittle-1);
+  font-size: 1.2em;
+  color: white;
+  background-color: transparent;
+  border: 2px solid var(--webkit-color-4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#btn-play:hover {
+  background-color: var(--webkit-color-4);
+  box-shadow: 0 0 25px var(--webkit-color-4);
+}
+
+#pantalla-carga {
+  z-index: 4;
 }
 
 #pantalla-carga.ocultar {
