@@ -52,9 +52,9 @@
      <!-- PRE PANTALLA DE CARGA -->
 
     <section id="pre-pantalla-carga">
-        <h1>Adentrate a descubrir lo que se oculta en HAWKINS...</h1>
-        <h1>...si te atreves</h1>
-        <button id="btn-play">PLAY</button>
+        <h1>EL PORTAL SE HA ABIERTO</h1>
+        <h2>¿Te atreves a entrar en Hawkins?</h2>
+        <button id="btn-play">ENTRAR</button>
     </section>
 
     <audio id="st-audio" loop>
@@ -131,7 +131,8 @@
 
     <div class="marquesina">
       <div class="t-marquesina">
-        <p>LET'S GO BACK TO <span class="m-s">INDIANA CIRCA 1983</span>, JUST FOUR BOYS IN THE BASEMENT CHILLIN' <span class="m-s">PLAYING D&D</span>, THERE WAS <span class="m-s">LUCAS</span>, THERE WAS WILLY <span class="m-s">WILL</span> AND <span class="m-s">DUSTIN</span>, THERE WAS <span class="m-s">MIKE</span> BUT ONE NIGHT, <span class="m-s">WILL GOES MISSING</span> WHILE HE’S RIDING ON HIS BIKE, YIKES!</p>
+        <p>LET'S GO BACK TO <span class="m-s">INDIANA CIRCA 1983</span>, JUST FOUR BOYS IN THE BASEMENT CHILLIN' <span class="m-s">PLAYING D&D</span>, THERE WAS <span class="m-s">LUCAS</span>, THERE WAS WILLY <span class="m-s">WILL</span> AND <span class="m-s">DUSTIN</span>, THERE WAS <span class="m-s">MIKE</span> BUT ONE NIGHT, <span class="m-s">WILL GOES MISSING</span> WHILE HE’S RIDING ON HIS BIKE, YIKES!
+        &nbsp;LET'S GO BACK TO <span class="m-s">INDIANA CIRCA 1983</span>, JUST FOUR BOYS IN THE BASEMENT CHILLIN' <span class="m-s">PLAYING D&D</span>, THERE WAS <span class="m-s">LUCAS</span>, THERE WAS WILLY <span class="m-s">WILL</span> AND <span class="m-s">DUSTIN</span>, THERE WAS <span class="m-s">MIKE</span> BUT ONE NIGHT, <span class="m-s">WILL GOES MISSING</span> WHILE HE’S RIDING ON HIS BIKE, YIKES!</p>
       </div>
     </div>
 
@@ -147,48 +148,59 @@
           </a>
           <h2 class="down">Cruza el portal al</h2>
         </div>
-      </div>
+        </div>
+        <!-- footer -->
+        <footer id="footer" data-aos="fade-up">
+          <div class="newsletter-titulo">
+            <p>ÚNETE A NUESTRA NEWSLETTER</p>
+          </div>
+          <form id="formulario" onsubmit="return openModal()">
+            <p class="form-text">Nombre<span>*</span></p>
+            <input type="text" id="nombre" placeholder="Escribe tu nombre..." required>
+            <p class="form-text">E-mail<span>*</span></p>
+            <input type="text" id="email" placeholder="Escribe tu e-mail..." required>
+            <p class="form-text">Comentario<span>*</span></p>
+            <input type="text" id="comment" placeholder="Escribe un mensaje..." required>
+            <div id="enviar">
+                <input class="boton" type="submit">
+            </div>
+          </form>
+
+          <!-- ventana modal -->
+
+          <div id="modal" class="modal">
+            <div class="modal-content">
+              <span onclick="closeModal()" id="close" class="close">&times;</span>
+              <h2>SUSCRIPCIÓN CORRECTA</h2>
+              <p>Gracias, <strong id="n"></strong></p>
+              <p>Hemos recibido tu mensaje: <br><strong id="m"></strong></p>
+              <p>Te contactaremos a <br><strong id="c"></strong> para informarte de actualizaciones sobre Stranger Things</p>
+            </div>
+          </div>
+
+          <div class="final-footer">
+            <div class="iconos">
+              <p class="media">REDES SOCIALES</p>
+              <div class="redes-icon">
+                <i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
+                <i class="fa-brands fa-tiktok" style="color: #ffffff;"></i>
+                <i class="fa-brands fa-x-twitter" style="color: #ffffff;"></i>
+            </div>
+
+            <div class="contacto">
+              <p>CONTÁCTANOS</p>
+              <p>+34 615 378 486</p>
+              <p>info@strangerthings.es</p>
+            </div>
+          </div>
+
+          <figure id="logo-footer">
+            <img src="media/img/logos/logo_st_blanco.svg" alt="Logo Stranger Things">
+            <img src="media/img/logos/netflix_blanco.svg">
+          </figure>
+
+        </footer>
     </section>
-
-    <!-- FOOTER -->
-
-    <footer data-aos="fade-up">
-        <figure id="logo-footer">
-          <img src="media/img/logos/logo_st_blanco.svg" alt="Logo Stranger Things">
-        </figure>
-        <ul class="social-webs">
-          <li>
-            <a href="https://www.facebook.com/avicii">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://x.com/avicii">
-              <i class="fab fa-twitter"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/avicii">
-              <i class="fab fa-instagram"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.youtube.com/user/AviciiOfficial">
-              <i class="fab fa-youtube"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://open.spotify.com/artist/1vCWHaC5f2uS3yhpwWbIA6">
-              <i class="fab fa-spotify"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.tiktok.com/@avicii">
-              <i class="fab fa-tiktok"></i>
-            </a>
-          </li>
-        </ul>
-      </footer>
 
 </body>
 
