@@ -43,4 +43,67 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// PARTICULAS
+
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+
+let width, height;
+let particles = [];
+const PARTICLE_COUNT = 150;
+
+function resizeCanvas() {
+  width = canvas.width = window.innerWidth;
+  height = canvas.height = window.innerHeight;
+}
+
+window.addEventListener("resize", resizeCanvas);
+resizeCanvas();
+
+class Particle {
+  constructor(reset = false) {
+    this.reset(reset);
+  }
+
+  reset(startTop = true) {
+    this.x = Math.random() * width;
+    this.y = startTop ? Math.random() * -height : Math.random() * height;
+    this.size = Math.random() * 2 + 0.5;
+    this.speed = Math.random() * 0.4 + 0.2;
+    this.opacity = Math.random() * 0.4 + 0.1;
+  }
+
+  update() {
+    this.y += this.speed;
+
+    if (this.y > height) {
+      this.reset(true);
+    }
+  }
+
+  draw() {
+    ctx.beginPath();
+    ctx.fillStyle = `rgba(255,255,255,${this.opacity})`;
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fill();
+  }
+}
+
+// Crear partículas
+for (let i = 0; i < PARTICLE_COUNT; i++) {
+  particles.push(new Particle());
+}
+
+function animateParticles() {
+  ctx.clearRect(0, 0, width, height);
+
+  particles.forEach(p => {
+    p.update();
+    p.draw();
+  });
+
+  requestAnimationFrame(animateParticles);
+}
+
+animateParticles();
 
