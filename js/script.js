@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // PARTICULAS
 
-const canvas = document.getElementById("particles");
+const canvas = document.getElementById("particulas");
 const ctx = canvas.getContext("2d");
 
 let width, height;
