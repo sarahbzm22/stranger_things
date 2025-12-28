@@ -23,7 +23,7 @@
 
 /* MENU DE NAVEGACION */
 
-#menu {
+#menu, #menu2 {
   position: fixed;
   top: 0;
   left: 0;
@@ -35,6 +35,9 @@
   padding: 3em; 
   /* background: transparent;  */
   z-index: 10;
+}
+
+#menu {
   opacity: 0;
   pointer-events: none;
   transition: opacity 1s ease;
@@ -45,7 +48,7 @@
   pointer-events: auto;
 }
 
-#logo-menu{
+#logo-menu, #logo-menu2{
   padding-left: 3em;
   padding-right: 3em;
   border-radius: 5em;
@@ -58,14 +61,14 @@
   align-items: center;
 }
 
-#logo-menu img {
+#logo-menu img, #logo-menu2 img{
   height: 50%;
   width: auto;
   object-fit: cover;
   border-radius: 0;
 }
 
-#nav-menu {
+#nav-menu, #nav-menu2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -79,21 +82,21 @@
   backdrop-filter: blur(12px);  
 }
 
-#nav-menu i,
-#nav-menu > div:first-child > ul > li:last-child {
+#nav-menu i, #nav-menu2 i,
+#nav-menu > div:first-child > ul > li:last-child, #nav-menu2 > div:first-child > ul > li:last-child {
   display: none;
 }
 
-#nav-menu ul {
+#nav-menu ul, #nav-menu2 ul {
   display: flex;
   gap: 3em;
 }
 
-#nav-menu li {
+#nav-menu li, #nav-menu2 li {
   list-style: none;
 }
 
-#nav-menu a {
+#nav-menu a, #nav-menu2 a {
   color: var(--webkit-color-3);
   font-size: 1em;
   font-family: var(--text-font);
@@ -103,7 +106,7 @@
   line-height: 1.2;
 }
 
-#nav-menu a::after {
+#nav-menu a::after, #nav-menu2 a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -115,8 +118,8 @@
   transition: width 0.3s ease;
 }
 
-#nav-menu a:hover::after,
-#nav-menu a#current-page::after {
+#nav-menu a:hover::after, #nav-menu2 a:hover::after,
+#nav-menu a#current-page::after, #nav-menu2 a#current-page::after {
   width: 100%;
 }
 
@@ -137,7 +140,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; 
   gap: 2em;
   text-align: center;
   font-size: 1.2em;
@@ -222,9 +225,13 @@
   pointer-events: none;
 }
 
-#main-section {
+#main-section, #main-section2 {
   z-index: 1;
   position: relative;
+}
+
+#main-section2 {
+  padding-bottom: 3em;
 }
 
 section {
@@ -235,8 +242,18 @@ section {
 /* CABECERA */
 
 #cabecera {
-    background-image: linear-gradient(var(--webkit-color-transparency-1)), url(../media/img/inicio/fondo_og.png);
-    display: block;
+  background-image: linear-gradient(var(--webkit-color-transparency-1)), url(../media/img/inicio/fondo_og.png);
+  display: block;
+}
+
+#cabecera2 {
+  background-image: linear-gradient(var(--webkit-color-transparency-1)), url(../media/img/temporadas/fondotemporadas.webp);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#cabecera, #cabecera2 {
     background-size: cover;
     background-position: center;
     /* background-attachment: fixed; */
@@ -245,9 +262,14 @@ section {
     overflow: hidden;
 }
 
+#cabecera2 h1{
+    color: var(--webkit-color-3);
+    font-size: 5em;
+}
+
 /* SECCIONES HOME PAGE */
 
-.info {
+.info, .info2 {
     background-color: var(--webkit-color-1);
     width: auto;
     height: auto;
@@ -256,7 +278,17 @@ section {
     align-items: center;
     flex-direction: column;
     padding: 2em;
-    gap: 8em;
+}
+
+.info {
+  gap: 8em;
+}
+
+.info2 {
+  padding-bottom: 8em;
+  border-bottom-left-radius: 4em;
+  border-bottom-right-radius: 4em;
+  gap: 8em;
 }
 
 .uno, .dos {
@@ -357,7 +389,7 @@ p {
     100% { background-position: 200% 50%; }
 }
 
-#contexto > p {
+.contexto > p {
   text-align: center;
   margin-bottom: 1.5em;
 }
@@ -478,6 +510,41 @@ body {
 /* section {
   z-index: 2;
 } */
+
+/* SECCIÓN TEMPORADAS */
+
+/* CARRUSELES */
+
+#carrusel {
+  /* width: 100%;
+  max-width: 100vw; */
+  overflow: hidden;
+  position: relative;
+  border-radius: 1em;
+}
+
+.imagenes {
+  display: flex;
+  width: max-content;
+  animation: slide 70s linear infinite;
+}
+
+.imagenes img {
+  width: auto;
+  height: 60vh;
+  flex-shrink: 0;
+  margin: 0 0.1em;
+  border-radius: 1em;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
 
 /* FOOTER */
 
