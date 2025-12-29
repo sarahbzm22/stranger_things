@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+
+
+<head>
+    <title>STRANGER THINGS | THE WEBSITE</title>
+    <meta charset="utf-8">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- aqui se pone el favicon -->
+    <link rel="icon" type="image/png" href="media/img/faviconst.png">
+    <!-- tipografía google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- MENÚ DE NAVEGACIÓN -->
+
+    <header id="menu2">
+      <div id="logo-menu2">
+        <img src="media/img/logos/logo_st_blanco.svg" alt="Logo Stranger Things">
+      </div>
+
+      <nav id="nav-menu2">
+        <div>
+          <i class="fas fa-bars" onclick="openMenu()"></i>
+          <ul>
+            <li>
+              <a class="link" href="index.html" onclick="closeMenu()">INICIO</a>
+            </li>
+            <li>
+              <a id="current_page" href="temporadas.html" onclick="closeMenu()">TEMPORADAS</a>
+            </li>
+            <li>
+              <a class="link" href="personajes.html" onclick="closeMenu()">PERSONAJES</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-xmark" onclick="closeMenu()"></i>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- PARTíCULAS -->
+
+    <canvas id="particulas"></canvas>
+
+    <div id="main-section2">
+
+      <!-- CABECERA -->
+
+      <section>
+          <div id="cabecera3">
+            <h1>LOS PERSONAJES</h1>
+          </div>
+      </section>
+
+      <!-- TEMPORADAS -->
+
+      <section class="info3">
+
+        <!-- TEMPORADA 1 -->
+
+          <div class="dos">
+              <div class="contexto" class="textos">
+                  <figure class="img-cont">
+                    <img class="card" src="media/img/personajes/cartas/ELEVEN.png">
+                    <img class="card" src="media/img/personajes/cartas/MIKE.png">
+                    <img class="card" src="media/img/personajes/cartas/WILL.png">
+                  </figure>
+                  <figure class="img-cont">
+                    <img class="card" src="media/img/personajes/cartas/DUSTIN.png">
+                    <img class="card" src="media/img/personajes/cartas/LUCAS.png">
+                    <img class="card" src="media/img/personajes/cartas/MAX.png"> 
+                  </figure>
+                  <figure class="img-cont">
+                    <img class="card" src="media/img/personajes/cartas/STEVE.png">
+                    <img class="card" src="media/img/personajes/cartas/NANCY.png">
+                    <img class="card" src="media/img/personajes/cartas/JONATHAN.png"> 
+                  </figure>
+                  <figure class="img-cont">
+                    <img class="card" src="media/img/personajes/cartas/ROBIN.png">
+                    <img class="card" src="media/img/personajes/cartas/ERICA.png">
+                    <img class="card" src="media/img/personajes/cartas/EDDIE.png"> 
+                  </figure>
+                  <figure class="img-cont">
+                    <img class="card" src="media/img/personajes/cartas/HOPPER.png">
+                    <img class="card" src="media/img/personajes/cartas/JOYCE.png">
+                    <img class="card" src="media/img/personajes/cartas/MURRAY.png"> 
+                  </figure>
+                  
+              </div>
+            </div>
+        </section>
+
+        <section class="info2">
+            <div class="dos">
+              <div class="contexto" class="textos">
+                  <h1 class="animacion">HÉROES DE HAWKINS</h1>
+                  <h2 class="animacion">Los que nos robaron el corazón</h2>
+                  <p>En este gráfico se muestran los cinco personajes que más han capturado a los fans de Stranger Things. Cada porción refleja la popularidad relativa de los personajes según encuestas recientes, destacando quiénes se han ganado un lugar especial en la serie y en la cultura pop. Estos personajes no solo destacan por sus historias y habilidades, sino también por la conexión emocional que han generado con la audiencia a lo largo de las temporadas.</p>
+              </div>
+              <section id="podio">
+              <figure class="img-cont">
+                <img class="foto" src="media/img/personajes/podio/dustin-g.jpg">
+                <img class="foto" id="primero" src="media/img/personajes/podio/steve-g.jpg">
+                <img class="foto" src="media/img/personajes/podio/eleven-g.jpg">
+              </figure>
+        </section>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+
+        <footer id="footer" data-aos="fade-up">
+            <div class="newsletter-titulo">
+                <p>ÚNETE A NUESTRA NEWSLETTER</p>
+            </div>
+            <form id="formulario" onsubmit="return openModal()">
+                <p class="form-text">Nombre<span>*</span></p>
+                <input type="text" id="nombre" placeholder="Escribe tu nombre..." required>
+                <p class="form-text">E-mail<span>*</span></p>
+                <input type="text" id="email" placeholder="Escribe tu e-mail..." required>
+                <p class="form-text">Comentario<span>*</span></p>
+                <input type="text" id="comment" placeholder="Escribe un mensaje..." required>
+                <div id="enviar">
+                    <input class="boton" type="submit">
+                </div>
+            </form>
+
+            <div id="info-footer">
+                <figure id="logo-footer">
+                <img src="media/img/logos/logo_st_blanco.svg" alt="Logo Stranger Things">
+                <img src="media/img/logos/netflix_blanco.svg">
+                </figure>
+
+                <div class="iconos">
+                <p class="media">REDES SOCIALES</p>
+                <div class="redes-icon">
+                    <i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
+                    <i class="fa-brands fa-tiktok" style="color: #ffffff;"></i>
+                    <i class="fa-brands fa-x-twitter" style="color: #ffffff;"></i>
+                </div>
+                </div>
+
+                <div class="contacto">
+                    <p>CONTÁCTANOS</p>
+                    <p>+34 615 378 486</p>
+                    <p>info@strangerthings.es</p>
+                </div>
+            </div>
+        </footer>
+    </body>
+    </html>

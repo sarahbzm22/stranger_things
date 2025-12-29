@@ -253,7 +253,14 @@ section {
   align-items: center;
 }
 
-#cabecera, #cabecera2 {
+#cabecera3 {
+  background-image: linear-gradient(var(--webkit-color-transparency-1)), url(../media/img/personajes/fondopersonajes.jpg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#cabecera, #cabecera2, #cabecera3 {
     background-size: cover;
     background-position: center;
     /* background-attachment: fixed; */
@@ -262,15 +269,27 @@ section {
     overflow: hidden;
 }
 
-#cabecera2 h1{
+#cabecera2 h1, #cabecera3 h1{
     color: var(--webkit-color-3);
     font-size: 5em;
+    mix-blend-mode: difference;
 }
 
 /* SECCIONES HOME PAGE */
 
 .info, .info2 {
     background-color: var(--webkit-color-1);
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 4em;
+}
+
+.info3 {
+    background-image: url("../media/img/personajes/d&d_fondo_bw_.png");
     width: auto;
     height: auto;
     display: flex;
@@ -305,7 +324,7 @@ section {
 
 .dos {
     flex-direction: column;
-    margin-top: 6em;
+    margin-top: 5em;
 }
 
 .dos div {
@@ -499,6 +518,53 @@ p {
   padding-top: 0.25em;
   padding-bottom: 0.5em;
   
+}
+
+#podio {
+  display: flex;
+  justify-content: center;
+}
+
+.img-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4em;
+  padding-top: 3em;
+}
+
+#primero {
+  width: 30%;
+  animation: flotar 3s ease-in-out infinite;
+}
+
+@keyframes flotar {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-19px); /* movimiento leve */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.foto {
+  width: 15%;
+  display: flex;
+  border-radius: 1em;
+  transition: transform 0.3s ease;
+}
+
+.foto:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 40px var(--webkit-color-4);
+}
+
+.card {
+  cursor: pointer;
 }
 
 body {
