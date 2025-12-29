@@ -277,7 +277,7 @@ section {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 2em;
+    padding: 4em;
 }
 
 .info {
@@ -513,6 +513,22 @@ body {
 
 /* SECCIÓN TEMPORADAS */
 
+#cabecera2 {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5em;
+}
+
+#cabecera2 h2 {
+  font-size: 2.5em;
+  color: white;
+}
+
+#cabecera2 h1,
+#cabecera2 h2 {
+  mix-blend-mode: difference;
+}
+
 /* CARRUSELES */
 
 #carrusel {
@@ -574,7 +590,7 @@ footer {
 }
 
 .newsletter-titulo p {
-  padding-top: 3em;
+  padding-top: 1.8em;
   font-family: var(--font-tittle-1);
   font-size: 1.5em;
 }
@@ -670,6 +686,7 @@ input, textarea {
   align-items: center;
   flex-direction: row;
   gap: 10em;
+  padding-top: 4em;
 }
 
 #logo-footer {
@@ -716,27 +733,12 @@ input, textarea {
   margin-top: 5em;
 }
 
-
-
-/* .social-webs {
+.redes-icon {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2em;
-  margin-top: 7em;
-  margin-bottom: 2em;
+  gap: 1.2em;
+  font-size: 1.7em;
+  padding-top: 0.8em;
+  cursor: pointer;
 }
-
-.social-webs a {
-  font-size: clamp(1.5rem, 5vw, 2.5rem);
-  color: #FFFFFF;
-}
-
-.social-webs li {
-  list-style: none;
-  display: flex;
-}
-
-#sponsors img{
-  width: 80vw;
-} */
