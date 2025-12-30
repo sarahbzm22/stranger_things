@@ -230,9 +230,9 @@
   position: relative;
 }
 
-#main-section2 {
+/* #main-section2 {
   padding-bottom: 3em;
-}
+} */
 
 section {
   z-index: 1;
@@ -240,6 +240,15 @@ section {
 }
 
 /* CABECERA */
+
+#cabecera, #cabecera2, #cabecera3 {
+    background-size: cover;
+    background-position: center;
+    /* background-attachment: fixed; */
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
 
 #cabecera {
   background-image: linear-gradient(var(--webkit-color-transparency-1)), url(../media/img/inicio/fondo_og.png);
@@ -253,20 +262,20 @@ section {
   align-items: center;
 }
 
-#cabecera3 {
-  background-image: linear-gradient(var(--webkit-color-transparency-1)), url(../media/img/personajes/fondopersonajes.jpg);
+#cabecera2 {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  line-height: 1.5em;
 }
 
-#cabecera, #cabecera2, #cabecera3 {
-    background-size: cover;
-    background-position: center;
-    /* background-attachment: fixed; */
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
+#cabecera2 h2 {
+  font-size: 2.5em;
+  color: white;
+}
+
+#cabecera2 h1,
+#cabecera2 h2 {
+  mix-blend-mode: difference;
 }
 
 #cabecera2 h1, #cabecera3 h1{
@@ -275,10 +284,20 @@ section {
     mix-blend-mode: difference;
 }
 
+#cabecera3 {
+  background-image: linear-gradient(var(--webkit-color-transparency-1)), url(../media/img/personajes/fondopersonajes.jpg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* SECCIONES HOME PAGE */
 
 .info, .info2 {
     background-color: var(--webkit-color-1);
+}
+
+.info, .info2, .info3 {
     width: auto;
     height: auto;
     display: flex;
@@ -290,13 +309,6 @@ section {
 
 .info3 {
     background-image: url("../media/img/personajes/d&d_fondo_bw_.png");
-    width: auto;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 4em;
 }
 
 .info {
@@ -304,7 +316,7 @@ section {
 }
 
 .info2 {
-  padding-bottom: 8em;
+  padding-bottom: 10em;
   border-bottom-left-radius: 4em;
   border-bottom-right-radius: 4em;
   gap: 8em;
@@ -577,24 +589,6 @@ body {
   z-index: 2;
 } */
 
-/* SECCIÓN TEMPORADAS */
-
-#cabecera2 {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.5em;
-}
-
-#cabecera2 h2 {
-  font-size: 2.5em;
-  color: white;
-}
-
-#cabecera2 h1,
-#cabecera2 h2 {
-  mix-blend-mode: difference;
-}
-
 /* CARRUSELES */
 
 #carrusel {
@@ -752,7 +746,7 @@ input, textarea {
   align-items: center;
   flex-direction: row;
   gap: 10em;
-  padding-top: 4em;
+  /* padding-top: 4em; */
 }
 
 #logo-footer {

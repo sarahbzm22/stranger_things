@@ -1,3 +1,5 @@
+// PANTALLA DE CARGA
+
 document.addEventListener("DOMContentLoaded", () => {
   const prePantalla = document.getElementById("pre-pantalla-carga");
   const pantallaCarga = document.getElementById("pantalla-carga");
@@ -43,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// PARTICULAS
+// PARTÍCULAS
 
 const canvas = document.getElementById("particulas");
 const ctx = canvas.getContext("2d");
@@ -107,7 +109,7 @@ function animateParticles() {
 
 animateParticles();
 
-// ventana modal
+// VENTANA MODAL
 
 function openModal() {
   var nombre = document.getElementById("nombre").value;
