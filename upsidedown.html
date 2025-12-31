@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+
+
+<head>
+    <title>UPSIDE DOWN</title>
+    <meta charset="utf-8">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/script.js" defer></script>
+    <script src="https://kit.fontawesome.com/c3fd22b8e3.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- aqui se pone el favicon -->
+    <link rel="icon" type="image/png" href="media/img/faviconst.png">
+    <!-- tipografía google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- MENÚ DE NAVEGACIÓN -->
+
+    <header id="menu3">
+      <div id="logo-menu3">
+        <img src="media/img/logos/logo_st_blanco.svg" alt="Logo Stranger Things">
+      </div>
+
+      <nav id="nav-menu3">
+        <div>
+          <i class="fas fa-bars" onclick="openMenu()"></i>
+          <ul>
+            <li>
+              <a class="link" href="index.html" onclick="closeMenu()">INICIO</a>
+            </li>
+            <li>
+              <a id="current_page" href="temporadas.html" onclick="closeMenu()">TEMPORADAS</a>
+            </li>
+            <li>
+              <a class="link" href="personajes.html" onclick="closeMenu()">PERSONAJES</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-xmark" onclick="closeMenu()"></i>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- PARTÍCULAS -->
+
+    <canvas id="particulas"></canvas>
+
+    <div id="main-section2">
+
+      <!-- CABECERA -->
+
+      <section id="cabecera4">
+          <div id="cabecera3">
+            <div class="ud-cont2">
+                <h2>Bienvenido al</h2>
+                <h1>UPSIDE DOWN</h1>
+                <h1 class="down2">UPSIDE DOWN</h1>
+                <h2 class="down2">Bienvenido al</h2>
+            </div>
+          </div>
+      </section>
+
+      <section class="que-es">
+        <div class="dos">
+              <div class="contexto" class="textos">
+                  <h1 class="animacion2">QUÉ ES ESTE MUNDO</h1>
+                  <h2 class="animacion2">Lo que debemos saber</h2>
+                  <p>Cuando hablamos del Upside Down, nos encontramos ante una dimensión paralela y oscura que existe junto a nuestro mundo, reflejando Hawkins pero de forma distorsionada y peligrosa. Llena de sombras, criaturas desconocidas y un ambiente opresivo, esta realidad alternativa esconde secretos que amenazan con infiltrarse en el mundo real.</p>
+                  <p>En el Upside Down, las leyes de la naturaleza se alteran, el tiempo y el espacio parecen distorsionados, y cada paso representa un riesgo constante. Esta dimensión es tanto el origen de los horrores que acechan a Hawkins como el escenario donde se revelan los misterios más profundos de la serie.</p>
+              </div>
+
+              <div id="carrusel">
+                <figure class="imagenes">
+                  <img class="slides" src="media/img/temporadas/s1/1.1.jpg" alt="Imagen 1">
+                  <img class="slides" src="media/img/temporadas/s1/2.1.jpg" alt="Imagen 2">
+                  <img class="slides" src="media/img/temporadas/s1/3.1.jpg" alt="Imagen 3">
+                  <img class="slides" src="media/img/temporadas/s1/4.1.jpg" alt="Imagen 4">
+                  <img class="slides" src="media/img/temporadas/s1/9.gif" alt="Imagen 5">
+                  <img class="slides" src="media/img/temporadas/s1/5.1.jpg" alt="Imagen 6">
+                  <img class="slides" src="media/img/temporadas/s1/6.1.jpg" alt="Imagen 7">
+                  <img class="slides" src="media/img/temporadas/s1/7.1.jpg" alt="Imagen 8">
+                  <img class="slides" src="media/img/temporadas/s1/8.1.jpg" alt="Imagen 9">
+                  <img class="slides" src="media/img/temporadas/s1/10.gif" alt="Imagen 10">
+
+                  <img class="slides" src="media/img/temporadas/s1/1.1.jpg" alt="Imagen 1">
+                  <img class="slides" src="media/img/temporadas/s1/2.1.jpg" alt="Imagen 2">
+                  <img class="slides" src="media/img/temporadas/s1/3.1.jpg" alt="Imagen 3">
+                  <img class="slides" src="media/img/temporadas/s1/4.1.jpg" alt="Imagen 4">
+                  <img class="slides" src="media/img/temporadas/s1/9.gif" alt="Imagen 5">
+                  <img class="slides" src="media/img/temporadas/s1/5.1.jpg" alt="Imagen 6">
+                  <img class="slides" src="media/img/temporadas/s1/6.1.jpg" alt="Imagen 7">
+                  <img class="slides" src="media/img/temporadas/s1/7.1.jpg" alt="Imagen 8">
+                  <img class="slides" src="media/img/temporadas/s1/8.1.jpg" alt="Imagen 9">
+                  <img class="slides" src="media/img/temporadas/s1/10.gif" alt="Imagen 10">
+                </figure>
+              </div>
+          </div>
+      </section>
+
+      <section class="como-surge">
+        <div class="uno">
+              <figure>
+                  <img src="media/img/inicio/intro.jpg">
+              </figure>
+              <div class="textos">
+                  <h1 class="animacion2">CÓMO SURGE</h1>
+                  <h2 class="animacion2">La maldición de Hawkins</h2>
+                  <p>En la serie, el Upside Down se manifiesta a través de portales que conectan esta dimensión oscura con el mundo real. A lo largo de Hawkins, estos portales surgen cuando fuerzas sobrenaturales, experimentos del laboratorio o individuos con habilidades especiales, como Eleven, alteran la realidad. Si nos remontamos a la cuarta temporada, Eleven abre un portal involuntariamente mediante sus poderes, que permite que Henry, uno de los personajes, sea transportado al Upside Down, demostrando que esta dimensión no es solo un lugar separado, sino un reflejo peligroso y vivo del mundo real, accesible cuando se manipula la energía que la conecta con nuestra realidad.</p>
+              </div>
+          </div>
+      </section>
+
+      <section class="efectos-normas">
+        <h1 id="texto-efectos" class="animacion2">LOS EFECTOS Y REGLAS DEL UPSIDE DOWN</h1>
+
+          <div class="uno">
+              <div id="temas" class="textos">
+                  <h2 class="efectos-azul">Alteración del tiempo y el espacio</h2>
+                  <p>La serie combina lo sobrenatural con lo humano, explorando la amistad y la lealtad de un grupo de jóvenes que enfrentan juntos peligros inimaginables, así como la fuerza de los lazos familiares frente a las amenazas externas. La serie refleja el miedo y la valentía al enfrentarse a lo desconocido, la curiosidad por descubrir secretos ocultos y las conspiraciones que rodean experimentos peligrosos del gobierno.</p>
+                  <p>A través de estos elementos, la historia aborda también la superación personal, el sacrificio y la importancia de mantenerse unidos ante la adversidad, creando una narrativa intensa, llena de misterio y emoción que conecta con el espectador.</p>
+              </div>
+              <figure>
+                  <img src="media/img/inicio/temas.jpg">
+              </figure>
+          </div>
+
+          <div class="uno">
+              <figure>
+                  <img src="media/img/inicio/intro.jpg">
+              </figure>
+              <div class="textos">
+                  <h2 class="efectos-azul">Presencia de criaturas extrañas y energía hostil en su atmósfera</h2>
+                  <p>En la serie, el Upside Down se manifiesta a través de portales que conectan esta dimensión oscura con el mundo real. A lo largo de Hawkins, estos portales surgen cuando fuerzas sobrenaturales, experimentos del laboratorio o individuos con habilidades especiales, como Eleven, alteran la realidad. Si nos remontamos a la cuarta temporada, Eleven abre un portal involuntariamente mediante sus poderes, que permite que Henry, uno de los personajes, sea transportado al Upside Down, demostrando que esta dimensión no es solo un lugar separado, sino un reflejo peligroso y vivo del mundo real, accesible cuando se manipula la energía que la conecta con nuestra realidad.</p>
+              </div>
+          </div>
+
+          <div class="uno">
+              <div id="temas" class="textos">
+                  <h2 class="efectos-azul">Conexión con el mundo real</h2>
+                  <p>La serie combina lo sobrenatural con lo humano, explorando la amistad y la lealtad de un grupo de jóvenes que enfrentan juntos peligros inimaginables, así como la fuerza de los lazos familiares frente a las amenazas externas. La serie refleja el miedo y la valentía al enfrentarse a lo desconocido, la curiosidad por descubrir secretos ocultos y las conspiraciones que rodean experimentos peligrosos del gobierno.</p>
+                  <p>A través de estos elementos, la historia aborda también la superación personal, el sacrificio y la importancia de mantenerse unidos ante la adversidad, creando una narrativa intensa, llena de misterio y emoción que conecta con el espectador.</p>
+              </div>
+              <figure>
+                  <img src="media/img/inicio/temas.jpg">
+              </figure>
+          </div>
+      </section>

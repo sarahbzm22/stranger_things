@@ -137,62 +137,61 @@ function closeModal() {
   return false;
 }
 
+// grafico
 
-// gráfico de barras
 
-// function cargaGraficoBarras() {
-//     // Datos para generar el gráfico, hay que definir las etiquetas y
-//     // los datasets. Hay que definir un color para cada dataset
-//     var datos = {
-//         labels: ["KIYOMIZU-DERA", "GINKAKU-JI", "KINKAKU-JI", "FUSHIMI INARI-TAISHA"],
-//         datasets: [{
-//             label: "Templo más visitado en 2025",
-//             backgroundColor: "rgb(190, 106, 127)",
-//             data: [5.0, 3.0, 6.0, 4.5]
-//         }],
-//     };
+function cargaGraficoTarta() {
+    var datos = {
+        labels: ["STEVE", "DUSTIN", "ELEVEN", "EDDIE", "MAX"],
+        datasets: [{
+            label: "2024",
+            backgroundColor: ["#76040a", "#90250dff", "#b60710ff", "#3f0407ff", "#733000ff"],
+            data: [28, 24, 22, 15, 11]
+        }]
+    };
 
-//     // Configuración del gráfico. Debe incluir imprescindiblemente el
-//     // tipo de gráfico y los datos que hemos definido previamente.
-//     // Se pueden añadir opciones para personalizar el gráfico
-//     var config = {
-//         type: "bar",
-//         data: datos,
-//         options: {
-//             responsive: true,
-//             maintainAspectRatio: false,
-//             scales: {
-//                 x: {
-//                     border: {
-//                         color: "black",
-//                         width: 2
-//                     },
-//                     grid: {
-//                         display: false
-//                     }
-//                 },
-//                 y: {
-//                     min: 0,
-//                     max: 10,
-//                     title: {
-//                         display: true,
-//                         text: "Número de visitantes (millones)"
-//                     },
-//                     border: {
-//                         color: "black",
-//                         width: 2
-//                     }
-//                 }
-//             }
-//         }
-//     };
+    var config = {
+        type: "pie",
+        data: datos,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            layout: {
+                padding: {
+                    bottom: 40 // espacio entre gráfico y leyenda
+                }
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: "PERSONAJES MÁS QUERIDOS (%)",
+                    font: {
+                        size: 17,
+                        family: "Benguiat Bold"
+                    },
+                    padding: {
+                        bottom: 25
+                    }
+                },
+                legend: {
+                    position: "bottom",
+                    labels: {
+                        padding: 25,   // separación entre gráfico y leyenda
+                        font: {
+                            size: 17,
+                            family: "Benguiat Bold"
+                        }
+                    }
+                }
+            }
+        }
+    };
 
-//     // Para crear el gráfico, se busca el elemento canvas por su id
-//     // y se le pasa la configuración en JSON que hemos definido
-//     var grafico = $("#barras")[0].getContext("2d");
-//     new Chart(grafico, config);
-// }
+    var grafico = $("#tarta")[0].getContext("2d");
+    new Chart(grafico, config);
+}
 
-// $(document).ready(function () {
-//     cargaGraficoBarras();
-// });
+$(document).ready(function () {
+    cargaGraficoTarta();
+});
+
