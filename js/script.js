@@ -109,7 +109,7 @@ function animateParticles() {
 
 animateParticles();
 
-// VENTANA MODAL
+// VENTANA MODAL formulario
 
 function openModal() {
   var nombre = document.getElementById("nombre").value;
