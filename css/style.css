@@ -131,7 +131,7 @@
   line-height: 1.2;
 }
 
-#nav-menu a::after, #nav-menu2 a::after, #nav-menu3 > div:first-child > ul > li:last-child {
+#nav-menu a::after, #nav-menu2 a::after, #nav-menu3 a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -375,10 +375,20 @@ section {
 
 .como-surge, .que-es, #texto-efectos {
   padding-top: 4.5em;
+  background-color: var(--webkit-color-1);
+}
+
+.efectos-normas {
+  background-color: var(--webkit-color-1);
+  padding-bottom: 7em;
 }
 
 #monstruos {
   background-image: url(../media/img/upsidedown/monstruos/fondo-monstruos.jpg);
+}
+
+#monstruos h1 {
+  padding-top: 4em;
 }
 
 .efectos-azul {
@@ -616,11 +626,7 @@ p {
 }
 
 #monstruos h1 {
-  padding-top: 2em;
-}
-
-#monstruos {
-  margin-top: 8em;
+  padding-top: 4em;
 }
 
 .down, .down2 {
@@ -706,12 +712,8 @@ p {
 body {
   overflow-x: hidden;
   background-color: var(--webkit-color-1);
-  /* z-index: 0; */
 }
 
-/* section {
-  z-index: 2;
-} */
 
 /* CARRUSELES */
 
@@ -748,7 +750,7 @@ body {
 
 /* FOOTER */
 
-footer {
+#footer, #footer2 {
   width: 100%;
   height: 100vh;
   display: flex;
@@ -758,9 +760,16 @@ footer {
   position: sticky;
   bottom: 0;
   /* margin-top: 4em; */
-  background: radial-gradient(circle at 20% 20%, #8f110f 0%, transparent 50%), radial-gradient(circle at 80% 80%, #a00606 0%, transparent 50%), radial-gradient(circle at 20% 80%, #a93610 0%, transparent 50%), radial-gradient(circle at 80% 20%, #e77b00dc 0%, transparent 50%);
   transition: opacity 0.5s ease, transform 5s ease;
   z-index: 0;
+}
+
+#footer {
+  background: radial-gradient(circle at 20% 20%, #8f110f 0%, transparent 50%), radial-gradient(circle at 80% 80%, #a00606 0%, transparent 50%), radial-gradient(circle at 20% 80%, #a93610 0%, transparent 50%), radial-gradient(circle at 80% 20%, #e77b00dc 0%, transparent 50%);
+}
+
+#footer2 {
+  background: radial-gradient(circle at 20% 20%, #122033 0%, transparent 50%), radial-gradient(circle at 80% 80%, #274855 0%, transparent 50%), radial-gradient(circle at 20% 80%, #0f1d4d 0%, transparent 50%), radial-gradient(circle at 80% 20%, #313c52dc 0%, transparent 50%);
 }
 
 #formulario {
@@ -796,21 +805,27 @@ input, textarea {
     padding-left: 1em;
 }
 
-.modal {
+.modal, .modal2 {
   display: none;
   width: 100%;
   height: 100%;
   position: fixed;
   left: 0;
   top: 0;
-  background-color: rgba(239, 99, 99, 0.397);
   justify-content: center;
   align-items: center;
   z-index: 1000;
 }
 
-.modal-content {
-  background: var(--webkit-color-2);
+.modal {
+  background-color: rgba(239, 99, 99, 0.397);
+}
+
+.modal2 {
+  background-color: rgba(99, 160, 239, 0.397);
+}
+
+.modal-content, .modal-content2 {
   padding: 2em 3em;
   border-radius: 3em;
   text-align: center;
@@ -823,7 +838,15 @@ input, textarea {
   /* z-index: 2; */
 }
 
-.modal-content h2 {
+.modal-content {
+  background: var(--webkit-color-2);
+}
+
+.modal-content2 {
+  background: var(--webkit-color-5);
+}
+
+.modal-content h2, .modal-content2 h2 {
   color: white;
   margin-bottom: 2em;
   font-family: var(--font-tittle-1);
@@ -835,7 +858,7 @@ input, textarea {
   mix-blend-mode: normal;
 }
 
-.modal-content p {
+.modal-content p, .modal-content2 p {
   color: white;
   padding: 0.3em;
   font-size: 1.3em;
@@ -892,7 +915,7 @@ input, textarea {
   object-fit: cover;
 }
 
-#enviar {
+#enviar, #enviar2 {
   padding-top: 1em;
   display: flex;
   justify-content: center;
@@ -900,17 +923,28 @@ input, textarea {
   width: auto;
 }
 
-#enviar .boton {
+#enviar .boton, #enviar2 .boton {
   width: 10em;
   height: 2.5em;
   font-size: 1em;
   font-family: var(--font-tittle-1);
-  background-color: var(--webkit-color-2);
   color: white;
+}
+
+#enviar .boton {
+  background-color: var(--webkit-color-2);
+}
+
+#enviar2 .boton {
+  background-color: var(--webkit-color-5);
 }
 
 #enviar .boton:hover {
   background-color: var(--webkit-color-4);
+}
+
+#enviar2 .boton:hover {
+  background-color: #234b5e;
 }
 
 .final-footer {
