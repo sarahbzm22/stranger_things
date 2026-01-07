@@ -20,7 +20,7 @@
   --webkit-color-5: #232f5e;
   --webkit-color-transparency-1: rgb(8, 8, 8, 0.3);
   --webkit-color-transparency-2: rgba(220, 16, 26, 0.34);
-  --webkit-color-transparency-3: rgba(57, 77, 149, 0.34);
+  --webkit-color-transparency-3: rgb(57, 77, 149);
 }
 
 /* MENU DE NAVEGACION */
@@ -607,7 +607,7 @@ p {
 
 @keyframes luz {
   from {
-    text-shadow: 0 0 10px rgb(255, 196, 0);
+    text-shadow: 0 0 10px #ffc400;
   }
   to {
     text-shadow: 0 0 30px rgb(255, 196, 0);
@@ -822,7 +822,7 @@ input, textarea {
 }
 
 .modal2 {
-  background-color: rgba(99, 160, 239, 0.397);
+  background-color: rgba(99, 160, 239, 0.396);
 }
 
 .modal-content, .modal-content2 {
