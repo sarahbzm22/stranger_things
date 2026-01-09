@@ -43,7 +43,7 @@
 }
 
 #menu3 {
-  top: 80%;
+  bottom: 0;
 }
 
 #menu {
@@ -264,6 +264,46 @@ section {
   position: relative;
 }
 
+/* UPSIDE DOWN */
+
+#upside-down #main-section2 {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+#upside-down .dos {
+  /* display: flex;
+  align-items: flex-end; */
+  margin-top: 0;
+  margin-bottom: 7em;
+}
+
+#upside-down .uno {
+  margin-bottom: 5em;
+  margin-top: 0;
+}
+
+#upside-down .que-es, #upside-down #texto-efectos {
+  padding-bottom: 1em;
+  padding-top: 4em;
+}
+
+#upside-down .efectos-normas {
+  padding-bottom: 0;
+}
+
+#upside-down #monstruos {
+  border-top-left-radius: 4em;
+  border-top-right-radius: 4em;
+  border-bottom-left-radius: 0em;
+  border-bottom-right-radius: 0em;
+  display: flex;
+  flex-direction: column;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  margin-top: 100vh;
+}
+
 /* CABECERA */
 
 #cabecera, #cabecera2, #cabecera3 {
@@ -368,7 +408,7 @@ section {
     margin-top: 5em;
 }
 
-.dos {
+.dos{
     flex-direction: column;
     margin-top: 5em;
 }
@@ -385,10 +425,6 @@ section {
 
 #monstruos {
   background-image: url(../media/img/upsidedown/monstruos/fondo-monstruos.jpg);
-}
-
-#monstruos h1 {
-  padding-top: 4em;
 }
 
 .efectos-azul {
@@ -626,7 +662,7 @@ p {
 }
 
 #monstruos h1 {
-  padding-top: 4em;
+  padding-top: 2em;
 }
 
 .down, .down2 {
@@ -757,11 +793,14 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: sticky;
   bottom: 0;
   /* margin-top: 4em; */
   transition: opacity 0.5s ease, transform 5s ease;
   z-index: 0;
+}
+
+#footer {
+  position: sticky;
 }
 
 #footer {
@@ -770,6 +809,7 @@ body {
 
 #footer2 {
   background: radial-gradient(circle at 20% 20%, #122033 0%, transparent 50%), radial-gradient(circle at 80% 80%, #274855 0%, transparent 50%), radial-gradient(circle at 20% 80%, #0f1d4d 0%, transparent 50%), radial-gradient(circle at 80% 20%, #313c52dc 0%, transparent 50%);
+  position: fixed;
 }
 
 #formulario {
