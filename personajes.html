@@ -8,6 +8,8 @@
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/jquery-3.6.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/script.js" defer></script>
@@ -68,35 +70,218 @@
       <!-- PERSONAJES -->
 
         <section class="info3">
-          <div class="dos">
-              <div class="contexto" class="textos">
-                  <figure class="img-cont">
-                    <img class="card" src="media/img/personajes/cartas/ELEVEN.png">
-                    <img class="card" src="media/img/personajes/cartas/MIKE.png">
-                    <img class="card" src="media/img/personajes/cartas/WILL.png">
-                  </figure>
-                  <figure class="img-cont">
-                    <img class="card" src="media/img/personajes/cartas/DUSTIN.png">
-                    <img class="card" src="media/img/personajes/cartas/LUCAS.png">
-                    <img class="card" src="media/img/personajes/cartas/MAX.png"> 
-                  </figure>
-                  <figure class="img-cont">
-                    <img class="card" src="media/img/personajes/cartas/STEVE.png">
-                    <img class="card" src="media/img/personajes/cartas/NANCY.png">
-                    <img class="card" src="media/img/personajes/cartas/JONATHAN.png"> 
-                  </figure>
-                  <figure class="img-cont">
-                    <img class="card" src="media/img/personajes/cartas/ROBIN.png">
-                    <img class="card" src="media/img/personajes/cartas/ERICA.png">
-                    <img class="card" src="media/img/personajes/cartas/EDDIE.png"> 
-                  </figure>
-                  <figure class="img-cont">
-                    <img class="card" src="media/img/personajes/cartas/HOPPER.png">
-                    <img class="card" src="media/img/personajes/cartas/JOYCE.png">
-                    <img class="card" src="media/img/personajes/cartas/MURRAY.png"> 
-                  </figure>
-                  
+          <div class="cards-grid">
+            <!-- CARTA -->
+            <div class="card" data-character="Eleven">
+              <div class="card-front">
+                <img src="media/img/personajes/cartas/ELEVEN.png" alt="Eleven">
               </div>
+
+              <div class="card-back">
+                <h3 class="name"></h3>
+                <p class="status"></p>
+                <p class="born"></p>
+                <p class="gender"></p>
+                <button class="mas-info" onclick="openModal(this)">MÁS INFO</button>
+              </div>
+            </div>
+
+            <div class="card" data-character="Mike Wheeler">
+              <div class="card-front">
+                <img src="media/img/personajes/cartas/MIKE.png" alt="Mike">
+              </div>
+
+              <div class="card-back">
+                <h3 class="name"></h3>
+                <p class="status"></p>
+                <p class="born"></p>
+                <p class="gender"></p>
+                <button class="mas-info" onclick="openModal(this)">MÁS INFO</button>
+              </div>
+            </div>
+
+            <div class="card" data-character="Will Byers">
+              <div class="card-front">
+                <img src="media/img/personajes/cartas/WILL.png" alt="Will">
+              </div>
+
+              <div class="card-back">
+                <h3 class="name"></h3>
+                <p class="status"></p>
+                <p class="born"></p>
+                <p class="gender"></p>
+                <button class="mas-info" onclick="openModal(this)">MÁS INFO</button>
+              </div>
+            </div>
+
+            <div class="card" data-character="Dustin Henderson">
+              <div class="card-front">
+                <img src="media/img/personajes/cartas/DUSTIN.png" alt="Dustin">
+              </div>
+
+              <div class="card-back">
+                <h3 class="name"></h3>
+                <p class="status"></p>
+                <p class="born"></p>
+                <p class="gender"></p>
+                <button class="mas-info" onclick="openModal(this)">MÁS INFO</button>
+              </div>
+            </div>
+
+            <div class="card" data-character="Lucas Sinclair">
+              <div class="card-front">
+                <img src="media/img/personajes/cartas/LUCAS.png" alt="Lucas">
+              </div>
+
+              <div class="card-back">
+                <h3 class="name"></h3>
+                <p class="status"></p>
+                <p class="born"></p>
+                <p class="gender"></p>
+                <button class="mas-info" onclick="openModal(this)">MÁS INFO</button>
+              </div>
+            </div>
+
+            <div class="card" data-character="Max Mayfield">
+              <div class="card-front">
+                <img src="media/img/personajes/cartas/MAX.png" alt="Max">
+              </div>
+
+              <div class="card-back">
+                <h3 class="name"></h3>
+                <p class="status"></p>
+                <p class="born"></p>
+                <p class="gender"></p>
+                <button class="mas-info" onclick="openModal(this)">MÁS INFO</button>
+              </div>
+            </div>
+
+            <div class="card" data-character="Steve Harrington">
+              <div class="card-front">
+                <img src="media/img/personajes/cartas/STEVE.png" alt="Steve">
+              </div>
+
+              <div class="card-back">
+                <h3 class="name"></h3>
+                <p class="status"></p>
+                <p class="born"></p>
+                <p class="gender"></p>
+                <button class="mas-info" onclick="openModal(this)">MÁS INFO</button>
+              </div>
+            </div>
+
+            <div class="card" data-character="Nancy Wheeler">
+              <div class="card-front">
+                <img src="media/img/personajes/cartas/NANCY.png" alt="Nancy">
+              </div>
+
+              <div class="card-back">
+                <h3 class="name"></h3>
+                <p class="status"></p>
+                <p class="born"></p>
+                <p class="gender"></p>
+                <button class="mas-info" onclick="openModal(this)">MÁS INFO</button>
+              </div>
+            </div>
+
+            <div class="card" data-character="Jonathan Byers">
+              <div class="card-front">
+                <img src="media/img/personajes/cartas/JONATHAN.png" alt="Jonathan">
+              </div>
+
+              <div class="card-back">
+                <h3 class="name"></h3>
+                <p class="status"></p>
+                <p class="born"></p>
+                <p class="gender"></p>
+                <button class="mas-info" onclick="openModal(this)">MÁS INFO</button>
+              </div>
+            </div>
+
+            <div class="card" data-character="Robin Buckley">
+              <div class="card-front">
+                <img src="media/img/personajes/cartas/ROBIN.png" alt="Robin">
+              </div>
+
+              <div class="card-back">
+                <h3 class="name"></h3>
+                <p class="status"></p>
+                <p class="born"></p>
+                <p class="gender"></p>
+                <button class="mas-info" onclick="openModal(this)">MÁS INFO</button>
+              </div>
+            </div>
+
+            <div class="card" data-character="Erica Sinclair">
+              <div class="card-front">
+                <img src="media/img/personajes/cartas/ERICA.png" alt="Erica">
+              </div>
+
+              <div class="card-back">
+                <h3 class="name"></h3>
+                <p class="status"></p>
+                <p class="born"></p>
+                <p class="gender"></p>
+                <button class="mas-info" onclick="openModal(this)">MÁS INFO</button>
+              </div>
+            </div>
+
+            <div class="card" id="Eddie"> 
+
+              <div class="card-front">
+                <img src="media/img/personajes/cartas/EDDIE.png" alt="Eddie">
+              </div>
+
+              <div class="card-back">
+                <h3 class="name">Eddie Munson</h3>
+                <p class="status">Status: Deceased</p>
+                <p class="born">Born: 1965</p>
+                <p class="gender">Gender: Male</p>
+                <button class="mas-info" onclick="openModal(this)">MÁS INFO</button>
+              </div>
+            </div>
+
+            <div class="card" data-character="Jim Hopper">
+              <div class="card-front">
+                <img src="media/img/personajes/cartas/HOPPER.png" alt="Hopper">
+              </div>
+
+              <div class="card-back">
+                <h3 class="name"></h3>
+                <p class="status"></p>
+                <p class="born"></p>
+                <p class="gender"></p>
+                <button class="mas-info" onclick="openModal(this)">MÁS INFO</button>
+              </div>
+            </div>
+
+            <div class="card" data-character="Joyce Byers">
+              <div class="card-front">
+                <img src="media/img/personajes/cartas/JOYCE.png" alt="Joyce">
+              </div>
+
+              <div class="card-back">
+                <h3 class="name"></h3>
+                <p class="status"></p>
+                <p class="born"></p>
+                <p class="gender"></p>
+                <button class="mas-info" onclick="openModal(this)">MÁS INFO</button>
+              </div>
+            </div>
+
+            <div class="card" data-character="Murray Bauman">
+              <div class="card-front">
+                <img src="media/img/personajes/cartas/MURRAY.png" alt="Murray">
+              </div>
+
+              <div class="card-back">
+                <h3 class="name"></h3>
+                <p class="status"></p>
+                <p class="born"></p>
+                <p class="gender"></p>
+                <button class="mas-info" onclick="openModal(this)">MÁS INFO</button>
+              </div>
+            </div>
             </div>
         </section>
 

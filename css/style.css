@@ -369,6 +369,7 @@ section {
 
 .info, .info2 {
     background-color: var(--webkit-color-1);
+    padding: 4em;
 }
 
 .info, .info2, .info3 {
@@ -378,11 +379,11 @@ section {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 4em;
 }
 
 .info3 {
     background-image: url("../media/img/personajes/d&d_fondo_bw_.png");
+    padding: 8em 0;
 }
 
 .info {
@@ -999,4 +1000,196 @@ input, textarea {
   font-size: 1.7em;
   padding-top: 0.8em;
   cursor: pointer;
+}
+
+
+/* TARJETAS */
+
+/* GRID ADAPTABLE */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 4.5em;
+  /* padding: 4em; */
+  max-width:880px;
+  margin: 0 auto;
+}
+
+/* CARTA */
+.card {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  /* cursor: pointer; */
+  perspective: 1000px;
+}
+
+/* FRONTAL Y DORSO */
+.card-front,
+.card-back {
+  position: absolute;
+  inset: 0;
+  /* border-radius: 1.5em; */
+  overflow: hidden;
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
+  transition: transform 0.7s ease;
+  
+}
+
+/* FRONTAL */
+.card-front img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transform: rotateY(0deg);
+}
+
+/* DORSO */
+.card-back {
+  transform: rotateY(180deg);
+  background-image: url("/media/img/personajes/cartas/DETRAS.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5em;
+  text-align: center;
+  height: 228px;
+}
+
+.card-back h3 {
+  font-family: var(--font-tittle-1);
+  font-size: 1.3em;
+  color: var(--webkit-color-3);
+}
+
+.card-back p {
+  font-family: var(--text-font);
+  font-size: 1em;
+}
+
+.mas-info {
+  margin: 0.5em;
+  padding: 0.5em;
+  font-family: var(--text-font);
+  font-size: 1em;
+  border-radius: 3em;
+  background-color: var(--webkit-color-2);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.mas-info:hover {
+  background-color: var(--webkit-color-4);
+}
+
+/* HOVER */
+.card:hover .card-front {
+  transform: rotateY(-180deg);
+}
+
+.card:hover .card-back {
+  transform: rotateY(0deg);
+}
+
+
+/* MÓVIL */
+@media (max-width: 767px) {
+
+  body {
+    background-image: url('../img/fondo header MOVIL.svg'); 
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+  }
+
+#nav-menu, #nav-menu2, #nav-menu3 {
+    padding-left: 0.9em;
+    padding-right: 0.9em;
+    border-radius: 10em;
+}
+   
+  #nav-menu > div:first-child > i, #nav-menu2 > div:first-child > i, #nav-menu3 > div:first-child > i {
+      display: block;
+      cursor: pointer;
+      color: white;
+      font-size: 1.5rem;
+   }
+
+  #nav-menu > div:first-child > ul, #nav-menu2 > div:first-child > ul, #nav-menu3 > div:first-child > ul {
+        position: fixed;
+        top: 27vh;
+        /* left: -16.7em; */
+        right: 100vw;
+        width: 100vw;
+        height: 30vh;
+        z-index: 1;
+        padding: 30% 0;
+        gap: 4em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(12px);
+        transition-duration: 1s;
+        flex-direction: column;
+        border-radius: 2em;
+    }
+
+    #nav-menu > div:first-child > ul, #nav-menu2 > div:first-child > ul {
+      background: radial-gradient(circle at 20% 20%, #8f110f 0%, transparent 50%), radial-gradient(circle at 80% 80%, #a00606 0%, transparent 50%), radial-gradient(circle at 20% 80%, #a93610 0%, transparent 50%), radial-gradient(circle at 80% 20%, #e77b00dc 0%, transparent 50%);
+  }
+
+   #nav-menu3 > div:first-child > ul {
+      background: radial-gradient(circle at 20% 20%, #122033 0%, transparent 50%), radial-gradient(circle at 80% 80%, #274855 0%, transparent 50%), radial-gradient(circle at 20% 80%, #0f1d4d 0%, transparent 50%), radial-gradient(circle at 80% 20%, #313c52dc 0%, transparent 50%);
+      position: fixed;
+  }
+
+  #nav-menu > div:first-child > ul li a, #nav-menu2 > div:first-child > ul li a, #nav-menu3 > div:first-child > ul li a {
+    color: #FFFFFF;
+    font-size: 1.8rem;
+    text-decoration: none;
+   font-family: var(--font-tittle-1);
+  }
+
+  .current_page {
+    background: #FFFFFF;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 300%;
+}
+
+  #nav-menu > div:first-child > ul > li:last-child, #nav-menu2 > div:first-child > ul > li:last-child, #nav-menu3 > div:first-child > ul > li:last-child {
+    display: block;
+    position: absolute;
+    right: 2em;
+    top: 2em;
+  }
+
+  #nav-menu > div:first-child > ul > li:last-child > i, #nav-menu2 > div:first-child > ul > li:last-child > i, #nav-menu3 > div:first-child > ul > li:last-child > i {
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+  }
+
+  #nav-menu a:hover, #nav-menu2 a:hover, #nav-menu3 a:hover {
+  background: #141414;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 300%;
+  animation: gradientShift 6s ease infinite alternate;
+}
+
+.fa-solid, .fas {
+    font-weight: 900;
+}
 }

@@ -1,3 +1,11 @@
+//AOS
+document.addEventListener("DOMContentLoaded", function () {
+  AOS.init({
+    duration: 1500,
+  });
+  document.getElementById("only-section").classList.add("visible");
+});
+
 // PANTALLA DE CARGA
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -44,6 +52,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1000);
   });
 });
+
+// Abre el menú
+function openMenu() {
+  console.log("Función openMenu");
+  document.getElementById(
+    "nav-menu", "nav-menu2", "nav-menu3"
+  ).firstElementChild.lastElementChild.style.right = "0vw";
+}
+
+// Cierra el menú
+function closeMenu() {
+  console.log("Función closeMenu");
+  document.getElementById(
+    "nav-menu", "nav-menu2", "nav-menu3"
+  ).firstElementChild.lastElementChild.style.right = "100vw";
+}
 
 // PARTÍCULAS
 
@@ -195,3 +219,44 @@ $(document).ready(function () {
     cargaGraficoTarta();
 });
 
+$(document).ready(function() {
+  // Guardamos la lista de personajes
+  let personajes = [];
+
+  // Petición AJAX con jQuery
+  $.ajax({
+    url: "https://stranger-things-api.fly.dev/api/v1/characters?perPage=5?page=1",
+    method: "GET",
+    success: function(data) {
+      personajes = data;
+      rellenarCartas();
+    },
+    error: function(err) {
+      console.error(err);
+    }
+  });
+
+  function rellenarCartas() {
+    $(".card").each(function() {
+      const $card = $(this);
+      const nombre = $card.data("character");
+
+      // Eddie ya tiene datos manuales, no lo tocamos
+      if ($card.attr("id") === "Eddie") return;
+
+      // Buscamos el personaje en la API
+      const personaje = personajes.find(p => p.name === nombre);
+
+      if (!personaje) {
+        console.warn("No encontrado:", nombre);
+        return;
+      }
+
+      // Rellenamos la info del dorso
+      $card.find(".name").text(personaje.name);
+      $card.find(".status").text(`Estado: ${personaje.status || "N/A"}`);
+      $card.find(".born").text(`Nacimiento: ${personaje.born || "N/A"}`);
+      $card.find(".gender").text(`Género: ${personaje.gender || "N/A"}`);
+    });
+  }
+});
