@@ -33,17 +33,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 3em; 
   /* background: transparent;  */
   z-index: 10;
 }
 
 #menu, #menu2 {
   top: 0;
+  padding: 3em 3em 0 3em;
 }
 
 #menu3 {
   bottom: 0;
+  padding: 0 3em 3em 3em;
 }
 
 #menu {
