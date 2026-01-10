@@ -316,12 +316,12 @@ section {
 }
 
 #cabecera {
-  background-image: linear-gradient(var(--webkit-color-transparency-1)), url(../media/img/inicio/fondo_og.png);
+  background-image: linear-gradient(var(--webkit-color-transparency-1)), url("../media/img/inicio/fondo_og.png");
   display: block;
 }
 
 #cabecera2 {
-  background-image: linear-gradient(var(--webkit-color-transparency-1)), url(../media/img/temporadas/fondotemporadas.webp);
+  background-image: linear-gradient(var(--webkit-color-transparency-1)), url("https://ik.imagekit.io/a8ydbgcop/Trabajo%20Stranger%20Things/temporadas/fondotemporadas.webp?updatedAt=1767899057240");
   display: flex;
   justify-content: center;
   align-items: center;
@@ -350,14 +350,14 @@ section {
 }
 
 #cabecera3 {
-  background-image: linear-gradient(var(--webkit-color-transparency-1)), url(../media/img/personajes/fondopersonajes.jpg);
+  background-image: linear-gradient(var(--webkit-color-transparency-1)), url("https://ik.imagekit.io/a8ydbgcop/Trabajo%20Stranger%20Things/personajes/fondopersonajes.jpg?updatedAt=1767898192484");
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 #cabecera4 > div {
-  background-image: linear-gradient(var(--webkit-color-transparency-1)), url(../media/img/upsidedown/FONDO_UPSIDE_DOWN.jpeg);
+  background-image: linear-gradient(var(--webkit-color-transparency-1)), url("https://ik.imagekit.io/a8ydbgcop/Trabajo%20Stranger%20Things/upsidedown/FONDO_UPSIDE_DOWN.jpeg?updatedAt=1767899316923");
 }
 
 #cabecera4 h1 {
@@ -382,7 +382,7 @@ section {
 }
 
 .info3 {
-    background-image: url("../media/img/personajes/d&d_fondo_bw_.png");
+    background-image: url("https://ik.imagekit.io/a8ydbgcop/Trabajo%20Stranger%20Things/personajes/d&d_fondo_bw_.png?updatedAt=1767898194091");
     padding: 8em 0;
 }
 
@@ -425,7 +425,7 @@ section {
 }
 
 #monstruos {
-  background-image: url(../media/img/upsidedown/monstruos/fondo-monstruos.jpg);
+  background-image: url("https://ik.imagekit.io/a8ydbgcop/Trabajo%20Stranger%20Things/upsidedown/monstruos/fondo-monstruos.jpg?updatedAt=1767899330470");
 }
 
 .efectos-azul {
@@ -609,7 +609,7 @@ p {
 }
 
 .fondo-ud {
-  background-image: url(../media/img/inicio/fondo-updwn.jpeg);
+  background-image: url("https://ik.imagekit.io/a8ydbgcop/Trabajo%20Stranger%20Things/inicio/fondo-updwn.jpeg?updatedAt=1767898033699");
 }
 
 .ud-cont, .ud-cont2 {
@@ -1009,7 +1009,7 @@ input, textarea {
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 4.5em;
+  gap: 6.5em;
   /* padding: 4em; */
   max-width:880px;
   margin: 0 auto;
@@ -1050,7 +1050,7 @@ input, textarea {
 /* DORSO */
 .card-back {
   transform: rotateY(180deg);
-  background-image: url("/media/img/personajes/cartas/DETRAS.png");
+  background-image: url("https://ik.imagekit.io/a8ydbgcop/Trabajo%20Stranger%20Things/personajes/cartas/DETRAS.png?updatedAt=1768059139059");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1103,13 +1103,6 @@ input, textarea {
 
 /* MÓVIL */
 @media (max-width: 767px) {
-
-  body {
-    background-image: url('../img/fondo header MOVIL.svg'); 
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-  }
 
 #nav-menu, #nav-menu2, #nav-menu3 {
     padding-left: 0.9em;
