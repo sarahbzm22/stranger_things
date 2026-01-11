@@ -161,8 +161,37 @@ function closeModal() {
   return false;
 }
 
-// grafico
 
+// VENTANA MODAL API
+
+function openApiModal() {
+  var nombre = document.getElementById("nombre").value;
+  var correo = document.getElementById("email").value;
+  var mensaje = document.getElementById("comment").value;
+
+  console.log("Nombre:", nombre);
+  console.log("Correo:", correo);
+  console.log("Mensaje", mensaje);
+
+  document.getElementById("n").innerHTML = nombre
+  document.getElementById("c").innerHTML = correo
+  document.getElementById("m").innerHTML = mensaje
+
+  document.getElementById("modal-api").style.display = "flex";
+
+  return false;
+}
+
+// cerrar ventana modal
+
+function closeApiModal() {
+  document.getElementById("modal-api").style.display = "none";
+
+  return false;
+}
+
+
+// GRÁFICO
 
 function cargaGraficoTarta() {
     var datos = {
@@ -188,7 +217,7 @@ function cargaGraficoTarta() {
             plugins: {
                 title: {
                     display: true,
-                    text: "PERSONAJES MÁS QUERIDOS (%)",
+                    text: "MOST LOVED CHARACTERS (%)",
                     font: {
                         size: 17,
                         family: "Benguiat Bold"
@@ -218,6 +247,8 @@ function cargaGraficoTarta() {
 $(document).ready(function () {
     cargaGraficoTarta();
 });
+
+// PRIMERA LLAMADA AL API
 
 $(document).ready(function() {
   // Guardamos la lista de personajes
@@ -254,9 +285,53 @@ $(document).ready(function() {
 
       // Rellenamos la info del dorso
       $card.find(".name").text(personaje.name);
-      $card.find(".status").text(`Estado: ${personaje.status || "N/A"}`);
-      $card.find(".born").text(`Nacimiento: ${personaje.born || "N/A"}`);
-      $card.find(".gender").text(`Género: ${personaje.gender || "N/A"}`);
+      $card.find(".status").text(`Status: ${personaje.status || "N/A"}`);
+      $card.find(".born").text(`Born: ${personaje.born || "N/A"}`);
+      $card.find(".gender").text(`Gender: ${personaje.gender || "N/A"}`);
     });
   }
 });
+
+// SEGUNDA LLAMADA
+
+const API_URL = "https://stranger-things-api.fly.dev/api/v1/characters?perPage=5?page=1";
+
+function openApiModal(button) {
+  const $card = $(button).closest(".card");
+  const characterName = $card.data("character");
+
+  if (!characterName) return;
+
+  $.ajax({
+    url: API_URL,
+    method: "GET",
+    data: {
+      name: characterName
+    },
+    success: function (data) {
+      if (!data || data.length === 0) return;
+
+      const character = data[0];
+
+      $("#modal-img")
+        .attr("src", character.photo)
+        .attr("alt", character.name);
+
+      $("#modal-name").text(character.name);
+      $("#modal-aliases").text("Aliases: " + (character.aliases || "Unknown"));
+      $("#modal-status").text("Status: " + (character.status || "Unknown"));
+      $("#modal-residence").text("Residence: " + (character.residence || "Unknown"));
+      $("#modal-occupation").text("Occupation: " + (character.occupation || "Unknown"));
+      $("#modal-portrayed").text("Portrayed by: " + (character.portrayedBy || "Unknown"));
+
+      $("#modal-api").css("display", "flex");
+    },
+    error: function (error) {
+      console.error("Error al cargar el personaje:", error);
+    }
+  });
+}
+
+function closeApiModal() {
+  $("#modal-api").css("display", "none");
+}
