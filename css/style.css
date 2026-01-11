@@ -106,8 +106,6 @@
   background-color: var(--webkit-color-transparency-3);
 }
 
-
-
 #nav-menu i, #nav-menu2 i, #nav-menu3 i,
 #nav-menu > div:first-child > ul > li:last-child, #nav-menu2 > div:first-child > ul > li:last-child, #nav-menu3 > div:first-child > ul > li:last-child {
   display: none;

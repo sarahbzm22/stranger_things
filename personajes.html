@@ -28,9 +28,9 @@
   <!-- MENÚ DE NAVEGACIÓN -->
 
     <header id="menu2">
-      <div id="logo-menu2">
-        <img src="https://ik.imagekit.io/a8ydbgcop/Trabajo%20Stranger%20Things/logos/logo_st_blanco.svg?updatedAt=1766716132254" alt="Stranger Things Logo">
-      </div>
+      <a id="logo-menu2" href="index.html">
+        <img src="https://ik.imagekit.io/a8ydbgcop/Trabajo%20Stranger%20Things/logos/logo_st_blanco.svg?updatedAt=1766716132254" alt="Logo Stranger Things">
+      </a>
 
       <nav id="nav-menu2">
         <div>
@@ -230,7 +230,7 @@
                 <p class="status">Status: Deceased</p>
                 <p class="born">Born: 1965</p>
                 <p class="gender">Gender: Male</p>
-                <button class="mas-info" onclick="openApiModal(this)">MORE INFO</button>
+                <button class="mas-info" onclick="openEddieModal()">MORE INFO</button>
               </div>
             </div>
 
@@ -374,19 +374,36 @@
               <img id="modal-img" src="" alt="" style="width:100%; border-radius:1em; margin-bottom:1em;">
               </figure>
               <div id="modal-text">
-                <h2 id="modal-name"></h2>
+                <h2 id="modal-name">Eddie Munson</h2>
                 <div id="modal-info">
-                  <p id="modal-aliases"></p>
-                  <p id="modal-status"></p>
-                  <p id="modal-residence"></p>
-                  <p id="modal-occupation"></p>
-                  <p id="modal-portrayed"></p>
+                  <p id="modal-aliases">Aliases: Eddie</p>
+                  <p id="modal-status">Status: Deceased</p>
+                  <p id="modal-residence">Residence: Hawkins, Indiana</p>
+                  <p id="modal-occupation">Occupation: Hellfire Club Leader / Student</p>
+                  <p id="modal-portrayed">Portrayed by: Joseph Quinn</p>
                 </div>
                 <button class="less-info" onclick="closeApiModal()">LESS INFO</button>
               </div>
             </div>
           </div>
 
-
+          <div id="modal-eddie" class="modal-api">
+            <div class="modal-content-api">
+              <figure class="modal-img-cont">
+                <img id="modal-img-eddie" src="media/img/Eddie_Munson.webp" alt="Eddie" style="width:100%; border-radius:1em; margin-bottom:1em;">
+              </figure>
+              <div id="modal-text">
+                <h2 id="modal-name-eddie">Eddie Munson</h2>
+                <div id="modal-info">
+                  <p id="modal-aliases-eddie">Aliases: Eddie</p>
+                  <p id="modal-status-eddie">Status: Deceased</p>
+                  <p id="modal-residence-eddie">Residence: Hawkins, Indiana</p>
+                  <p id="modal-occupation-eddie">Occupation: Hellfire Club Leader / Student</p>
+                  <p id="modal-portrayed-eddie">Portrayed by: Joseph Quinn</p>
+                </div>
+                <button class="less-info" onclick="closeEddieModal()">LESS INFO</button>
+              </div>
+            </div>
+          </div>
 </body>
 </html>

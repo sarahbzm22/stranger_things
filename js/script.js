@@ -335,3 +335,20 @@ function openApiModal(button) {
 function closeApiModal() {
   $("#modal-api").css("display", "none");
 }
+
+// VENTANA MODAL EDDIE
+
+// Abrir modal 
+function openEddieModal() {
+  const modal = $("#modal-eddie");
+  modal.css("display", "flex").css("opacity", 0); // inicio invisible
+  modal.animate({ opacity: 1 }, 600); // animación fade-in de 600ms
+}
+
+// Cerrar modal
+function closeEddieModal() {
+  const modal = $("#modal-eddie");
+  modal.animate({ opacity: 0 }, 400, () => {
+    modal.css("display", "none"); // al terminar, ocultamos completamente
+  });
+}
