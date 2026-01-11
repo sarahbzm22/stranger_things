@@ -619,7 +619,10 @@ p {
 }
 
 .ud-cont {
-  padding-top: 16.5%; 
+    /* padding-top: 16.5%; */
+    top: 37%;
+    display: flex;
+    position: relative;
 }
 
 .ud-cont2 {
@@ -1153,44 +1156,86 @@ input, textarea {
   transform: rotateY(0deg);
 }
 
-/* MODAL TARJETAS */
-/* .modal-card {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.85);
-  z-index: 9999;
-  justify-content: center;
-  align-items: center;
+/* ORDENADOR PEQUEÑO */
+
+@media (max-width: 1024px) {
+
+  p {
+    font-size: 1em;
+  }
+
+  h1 {
+    font-size: 1.7em;
+  }
+
+  h2 {
+    font-size: 1.3em;
+  }
+
+  #logo-footer {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    gap: 1.5em;
+  }
+
+  #logo-footer img {
+    width: 40%;
+  }
+
+  #info-footer {
+    gap: 8em;
+  }
+
+  .modal-content h2, .modal-content2 h2 {
+    margin-bottom: 1.4em;
+    padding-top: 1em;
+  }
+
+  .modal-content p, .modal-content2 p, .modal-content-api p {
+    padding: 0.2em;
+    font-size: 1.1em;
+  }
+
+  #modal-text {
+    gap: 2em;
+  }
+
+  .modal-content-api {
+    max-width: 840px;
+  }
+
+  #formulario {
+      padding-top: 1.4em;
+  }
+
+  input, textarea {
+    height: 1.5em;
+  }
+
+  #enviar .boton, #enviar2 .boton {
+      font-size: 0.9em;
+  }
+
+  .form-text {
+    font-size: 0.9em;
+  }
+
+  #cabecera2 h1, #cabecera3 h1 {
+    font-size: 4em;
+  }
+
+  
+
 }
-
-.modal-card-content {
-  background: #111;
-  color: white;
-  padding: 2em;
-  border-radius: 1em;
-  width: 90%;
-  max-width: 500px;
-  position: relative;
-}
-
-.modal-card-close {
-  position: absolute;
-  top: 1em;
-  right: 1em;
-  cursor: pointer;
-  font-size: 1.5em;
-} */
-
 
 /* MÓVIL */
 @media (max-width: 767px) {
 
-#nav-menu, #nav-menu2, #nav-menu3 {
-    padding-left: 0.9em;
-    padding-right: 0.9em;
-    border-radius: 10em;
-}
+  #nav-menu, #nav-menu2, #nav-menu3 {
+      padding-left: 0.9em;
+      padding-right: 0.9em;
+      border-radius: 10em;
+  }
    
   #nav-menu > div:first-child > i, #nav-menu2 > div:first-child > i, #nav-menu3 > div:first-child > i {
       display: block;
