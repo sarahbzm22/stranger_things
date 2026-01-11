@@ -9,21 +9,19 @@ document.addEventListener("DOMContentLoaded", function () {
 // PANTALLA DE CARGA
 
 document.addEventListener("DOMContentLoaded", () => {
-  const prePantalla = document.getElementById("pre-pantalla-carga");
   const pantallaCarga = document.getElementById("pantalla-carga");
+  if (!pantallaCarga) return;
+
+  const prePantalla = document.getElementById("pre-pantalla-carga");
   const video = pantallaCarga.querySelector("video");
   const menu = document.getElementById("menu");
   const boton = document.getElementById("btn-play");
   const audio = document.getElementById("st-audio");
 
-  // Bloqueamos scroll al inicio
   document.body.classList.add("no-scroll");
-
-  // El vídeo NO debe arrancar solo
   video.pause();
 
   boton.addEventListener("click", () => {
-    // Ocultamos la pre-pantalla
     prePantalla.style.opacity = "0";
     prePantalla.style.pointerEvents = "none";
 
@@ -31,43 +29,46 @@ document.addEventListener("DOMContentLoaded", () => {
       prePantalla.style.display = "none";
     }, 1000);
 
-    // Arrancamos vídeo y audio A LA VEZ
     video.play();
     audio.play();
   });
 
   video.addEventListener("ended", () => {
-    // Ocultamos pantalla de carga
     pantallaCarga.classList.add("ocultar");
-
-    // Mostramos el menú
     menu.classList.add("visible");
-
-    // Quitamos bloqueo de scroll
     document.body.classList.remove("no-scroll");
 
-    // Eliminamos el section tras la animación
+    audio && !audio.paused ? showOffButton() : showOnButton();
+
     setTimeout(() => {
       pantallaCarga.style.display = "none";
     }, 1000);
   });
 });
 
+
+// MENÚ HAMBURGUESA
+
+function getNavMenu() {
+  return document.querySelector("#nav-menu, #nav-menu2, #nav-menu3");
+}
+
 // Abre el menú
 function openMenu() {
-  console.log("Función openMenu");
-  document.getElementById(
-    "nav-menu", "nav-menu2", "nav-menu3"
-  ).firstElementChild.lastElementChild.style.right = "0vw";
+  const nav = getNavMenu();
+  if (!nav) return;
+
+  nav.firstElementChild.lastElementChild.style.right = "0vw";
 }
 
 // Cierra el menú
 function closeMenu() {
-  console.log("Función closeMenu");
-  document.getElementById(
-    "nav-menu", "nav-menu2", "nav-menu3"
-  ).firstElementChild.lastElementChild.style.right = "100vw";
+  const nav = getNavMenu();
+  if (!nav) return;
+
+  nav.firstElementChild.lastElementChild.style.right = "100vw";
 }
+
 
 // PARTÍCULAS
 
@@ -115,7 +116,7 @@ class Particle {
   }
 }
 
-// Crear partículas
+// Crea partículas
 for (let i = 0; i < PARTICLE_COUNT; i++) {
   particles.push(new Particle());
 }
@@ -133,7 +134,7 @@ function animateParticles() {
 
 animateParticles();
 
-// VENTANA MODAL formulario
+// VENTANA MODAL DEL FORM
 
 function openModal() {
   var nombre = document.getElementById("nombre").value;
@@ -153,43 +154,13 @@ function openModal() {
   return false;
 }
 
-// cerrar ventana modal
+// Cierra la ventana modal
 
 function closeModal() {
   document.getElementById("modal").style.display = "none";
 
   return false;
 }
-
-
-// VENTANA MODAL API
-
-function openApiModal() {
-  var nombre = document.getElementById("nombre").value;
-  var correo = document.getElementById("email").value;
-  var mensaje = document.getElementById("comment").value;
-
-  console.log("Nombre:", nombre);
-  console.log("Correo:", correo);
-  console.log("Mensaje", mensaje);
-
-  document.getElementById("n").innerHTML = nombre
-  document.getElementById("c").innerHTML = correo
-  document.getElementById("m").innerHTML = mensaje
-
-  document.getElementById("modal-api").style.display = "flex";
-
-  return false;
-}
-
-// cerrar ventana modal
-
-function closeApiModal() {
-  document.getElementById("modal-api").style.display = "none";
-
-  return false;
-}
-
 
 // GRÁFICO
 
@@ -211,7 +182,7 @@ function cargaGraficoTarta() {
             maintainAspectRatio: false,
             layout: {
                 padding: {
-                    bottom: 40 // espacio entre gráfico y leyenda
+                    bottom: 40 // Espacio entre gráfico y leyenda
                 }
             },
             plugins: {
@@ -229,7 +200,7 @@ function cargaGraficoTarta() {
                 legend: {
                     position: "bottom",
                     labels: {
-                        padding: 25,   // separación entre gráfico y leyenda
+                        padding: 25,   // Separación entre gráfico y leyenda
                         font: {
                             size: 17,
                             family: "Benguiat Bold"
@@ -251,10 +222,10 @@ $(document).ready(function () {
 // PRIMERA LLAMADA AL API
 
 $(document).ready(function() {
-  // Guardamos la lista de personajes
+  // Se guarda la lista de personajes
   let personajes = [];
 
-  // Petición AJAX con jQuery
+  // Petición AJAX
   $.ajax({
     url: "https://stranger-things-api.fly.dev/api/v1/characters?perPage=5?page=1",
     method: "GET",
@@ -272,10 +243,10 @@ $(document).ready(function() {
       const $card = $(this);
       const nombre = $card.data("character");
 
-      // Eddie ya tiene datos manuales, no lo tocamos
+      // Para que no muestre los datos de EDDIE
       if ($card.attr("id") === "Eddie") return;
 
-      // Buscamos el personaje en la API
+      // Para que aparezca el personaje que queremos en la API
       const personaje = personajes.find(p => p.name === nombre);
 
       if (!personaje) {
@@ -283,7 +254,7 @@ $(document).ready(function() {
         return;
       }
 
-      // Rellenamos la info del dorso
+      // Info del dorso
       $card.find(".name").text(personaje.name);
       $card.find(".status").text(`Status: ${personaje.status || "N/A"}`);
       $card.find(".born").text(`Born: ${personaje.born || "N/A"}`);
@@ -336,19 +307,79 @@ function closeApiModal() {
   $("#modal-api").css("display", "none");
 }
 
-// VENTANA MODAL EDDIE
+// VENTANA MODAL EDDIE (para que se parezca al modal del API)
 
 // Abrir modal 
 function openEddieModal() {
   const modal = $("#modal-eddie");
-  modal.css("display", "flex").css("opacity", 0); // inicio invisible
-  modal.animate({ opacity: 1 }, 600); // animación fade-in de 600ms
+  modal.css("display", "flex").css("opacity", 0); // Inicio invisible
+  modal.animate({ opacity: 1 }, 600);
 }
 
 // Cerrar modal
 function closeEddieModal() {
   const modal = $("#modal-eddie");
   modal.animate({ opacity: 0 }, 400, () => {
-    modal.css("display", "none"); // al terminar, ocultamos completamente
+    modal.css("display", "none"); // Cuando termina, se oculta
   });
 }
+
+// BOTÓN ON/OFF MUSICA
+
+document.addEventListener("DOMContentLoaded", () => {
+  const btnOn  = document.getElementById("musica-on");
+  const btnOff = document.getElementById("musica-off");
+  const pantallaCarga = document.getElementById("pantalla-carga");
+  const audio = document.getElementById("st-audio");
+
+  // Home
+  if (pantallaCarga) {
+    if (btnOn)  btnOn.style.display = "none";
+    if (btnOff) btnOff.style.display = "none";
+    return;
+  }
+
+  // Páginas sin pantalla de carga
+  if (!audio || audio.paused) {
+    showOnButton();
+  } else {
+    showOffButton();
+  }
+});
+
+
+let musicPlaying = false;
+const audio = document.getElementById("st-audio");
+
+const btnOn  = document.getElementById("musica-on");
+const btnOff = document.getElementById("musica-off");
+
+// On
+function playMusic() {
+  if (!audio) return;
+
+  audio.play();
+  musicPlaying = true;
+  showOffButton();
+}
+
+// Off
+function stopMusic() {
+  if (!audio) return;
+
+  audio.pause();
+  musicPlaying = false;
+  showOnButton();
+}
+
+// Ayudas visuales
+function showOnButton() {
+  if (btnOn)  btnOn.style.display = "flex";
+  if (btnOff) btnOff.style.display = "none";
+}
+
+function showOffButton() {
+  if (btnOn)  btnOn.style.display = "none";
+  if (btnOff) btnOff.style.display = "flex";
+}
+

@@ -49,6 +49,21 @@
 
     <canvas id="particulas"></canvas>
 
+    <!-- MÚSICA ON/OFF -->
+
+    <div id="musica-on" class="musica-on2">
+      <i class="fa-solid fa-volume-high" onclick="playMusic()"></i>
+    </div>
+
+    <div id="musica-off" class="musica-off2">
+      <i class="fa-solid fa-volume-xmark" onclick="stopMusic()"></i>
+    </div>
+
+    <audio id="st-audio" loop>
+      <source src="media/audio/Stranger Things Main Theme.mp4" type="audio/mp4">
+    </audio>
+
+
     <div id="main-section2">
 
       <!-- CABECERA -->
@@ -274,19 +289,21 @@
               <img src="https://ik.imagekit.io/a8ydbgcop/Trabajo%20Stranger%20Things/logos/netflix_blanco.svg">
             </figure>
 
-            <div class="iconos">
-              <p class="media">SOCIAL MEDIA</p>
-              <div class="redes-icon">
-                <i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
-                <i class="fa-brands fa-tiktok" style="color: #ffffff;"></i>
-                <i class="fa-brands fa-x-twitter" style="color: #ffffff;"></i>
+            <div class="medios">
+              <div class="iconos">
+                <p class="media">SOCIAL MEDIA</p>
+                <div class="redes-icon">
+                  <i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
+                  <i class="fa-brands fa-tiktok" style="color: #ffffff;"></i>
+                  <i class="fa-brands fa-x-twitter" style="color: #ffffff;"></i>
+                </div>
               </div>
-            </div>
 
-            <div class="contacto">
-              <p>CONTACT US</p>
-              <p>+34 615 378 486</p>
-              <p>info@strangerthings.es</p>
+              <div class="contacto">
+                <p>CONTACT US</p>
+                <p>+34 615 378 486</p>
+                <p>info@strangerthings.es</p>
+              </div>
             </div>
           </div>
         </footer>
