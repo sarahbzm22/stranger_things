@@ -1507,7 +1507,8 @@ input, textarea {
 @media (max-width: 767px) {
 
   #nav-menu > div:first-child > ul li a, #nav-menu2 > div:first-child > ul li a, #nav-menu3 > div:first-child > ul li a {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    line-height: 0;
   }
 
   .medios {
@@ -1518,12 +1519,115 @@ input, textarea {
     width: 60%;
   }
 
+  #cabecera {
+    background-size: 38em;
+  }
+
   #cabecera2 h1, #cabecera3 h1 {
     font-size: 2em;
   }
 
+  .uno img {
+    width: 69vw;
+  }
+
+  .dos h1 {
+    text-align: center;
+  }
+
+  #dos figure {
+    flex-direction: column;
+  }
+
+  #dos img {
+    width: 69vw;
+  }
+
+  .upside-down h1 {
+    font-size: 2.5em;
+  }
+  
+  .modal-content {
+    width: 65%;
+  }
+
+  .modal-content2 {
+    width: 65%;
+  }
+
+  .modal-content h2 {
+    font-size: 1.7em;
+  }
+
+  .modal-content2 h2 {
+    font-size: 1.7em;
+  }
+
+  #monstruos {
+    height: 425vw;
+  }
+
+  #monstruos h1, #monstruos h2 {
+    text-align: center;
+  }
+
+  #monstruos h1 {
+    font-size: 1.5em;
+  }
+
+  #monstruos h2 {
+    font-size: 1.3em;
+  }
+
+  .img-cont2 {
+    flex-direction: column;
+  }
+
+  .dos2 img {
+    width: 69vw;
+  }
+
+  .dos h2 {
+    text-align: center;
+  }
+
+  .info3 {
+    background-size: 370em;
+  }
+
   .cards-grid {
     max-width: 400px;
+  }
+
+  .modal-content-api {
+    height: 180vw;
+    width: 70%;
+    flex-direction: column;
+  }
+
+  .modal-img-cont {
+    height: 21vh;
+    width: 50vw;
+  }
+
+  #modal-img {
+    height: 100%;
+  }
+
+  #modal-text {
+    width: 74vw;
+  }
+
+  .img-cont {
+    flex-direction: column;
+  }
+
+  .img-cont img {
+    width: 45vw;
+  }
+
+  #primero {
+    width: 69vw;
   }
 
 }
